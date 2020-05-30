@@ -170,6 +170,7 @@ namespace ReCircle.ViewModel
 
         #region Commands
         public ICommand LoginCommand { get { return new RelayCommand(Login); } }
+        public ICommand RegisterTypeCommand { get { return new RelayCommand(Registro); } }
 
         private async void Login()
         {
@@ -223,6 +224,11 @@ namespace ReCircle.ViewModel
             IsRunning = false;
             IsEnabled = true;
 
+        }
+
+        private async void Registro()
+        {
+            await navigationService.Navigate("Registro");
         }
         #endregion
 

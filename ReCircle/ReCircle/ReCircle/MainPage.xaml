@@ -179,7 +179,7 @@
                         <ImageButton Source="LogoFb" Command="{Binding LoginFacebookCommand}" IsEnabled="{Binding IsEnabled}" Grid.Column="0" Grid.Row="0" BackgroundColor="Transparent" HorizontalOptions="Center"/>
                         <ImageButton Source="LogoGoogle" Grid.Column="1" Grid.Row="0" IsEnabled="{Binding IsEnabled}" BackgroundColor="Transparent" HorizontalOptions="Center"/>
                         <Label Grid.Row="1" Grid.ColumnSpan="2" Text="¿Aún no tienes una cuenta?" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Medium"/>
-                        <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Registrate" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Large" TextDecorations="Underline" FontAttributes="Bold">
+                        <Label Grid.Row="2" Grid.ColumnSpan="2" Text="a" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Large" TextDecorations="Underline" FontAttributes="Bold">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer
                         Tapped="Registrarse" Command="{Binding RegisterTypeCommand}"/>

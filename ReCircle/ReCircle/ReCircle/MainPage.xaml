@@ -3,14 +3,195 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Services="clr-namespace:ReCircle.Services"
              mc:Ignorable="d"
-             x:Class="ReCircle.MainPage">
+             x:Class="ReCircle.MainPage"
+             BackgroundImageSource="Background">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ScrollView VerticalOptions="FillAndExpand">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout BindingContext="{Binding login}" Padding="15,5,15,5" VerticalOptions="CenterAndExpand" Grid.Row="0" HorizontalOptions="FillAndExpand" >
 
+
+
+                <Image Source="LogoPrincipal.png" Margin="0">
+                </Image>
+
+                <Label 
+            Text="BIENVENIDO" 
+             TextColor="White" 
+            HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="Start" 
+            FontSize="Large" 
+            FontAttributes="Bold" 
+            Scale="1"/>
+
+                <Label Text="Inicio de Sesión" 
+               TextColor="White" 
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start" 
+               FontSize="Medium" 
+               FontAttributes="Bold"
+               Scale="0.75"/>
+
+                <Label Text="{Binding Message}" 
+               TextColor="White" 
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start"
+               IsVisible="{Binding IsVisible}"
+               />
+
+
+                <StackLayout Padding="10" 
+                     VerticalOptions="FillAndExpand" 
+                     HorizontalOptions="FillAndExpand">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Services:StandardEntry
+                x:Name="Celular"
+                ClearButtonVisibility="WhileEditing"
+                Grid.Row="0"
+                Margin="0,0,0,10"
+                Padding="10"
+                BackgroundColor="#31FFFFFF"
+                BorderColor="{Binding ColorEntryPhone}"
+                BorderThickness="1"
+                FontSize="Medium" 
+                TextColor="White"
+                CornerRadius="8"
+                Placeholder="Número de celular"
+                Keyboard ="Telephone"
+                PlaceholderColor="LightSlateGray" 
+                MaxLength="10"
+                Text="{Binding UserName}"
+                    />
+
+                        <Grid
+                            Grid.Row="1"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="FillAndExpand"
+                        IsClippedToBounds="True">
+
+                            <Services:StandardEntry
+                        x:Name="Contraseña" 
+                        ClearButtonVisibility="WhileEditing"
+                        Grid.Row="0"
+                        Padding="10"
+                        Margin="0,0,0,10"
+                        IsPassword="True"
+                        FontSize="Medium" 
+                        BackgroundColor="#31FFFFFF"
+                        BorderColor="{Binding ColorEntryPassword}"
+                        BorderThickness="1"
+                        TextColor="White"
+                        CornerRadius="8"
+                        Placeholder="Contraseña"
+                        PlaceholderColor="LightSlateGray"
+                        Text="{Binding Password}"
+                        />
+                            <Grid
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="0,0,20,5"
+                            HorizontalOptions="End"
+                            BackgroundColor="Transparent"
+                            IsClippedToBounds="True"
+                            VerticalOptions="Center">
+                                <Button x:Name="ShowPasswordButton" BackgroundColor="Transparent">
+                                    <Button.Margin>
+                                        <OnPlatform x:TypeArguments="Thickness">
+                                            <On Platform="Android" Value="-4,-6,-4,-6" />
+                                            <On Platform="iOS" Value="0" />
+                                        </OnPlatform>
+                                    </Button.Margin>
+                                    <Button.Triggers>
+                                        <EventTrigger Event="Clicked">
+                                            <Services:ShowPasswordTriggerAction
+                                            ContraseñaName="Contraseña"
+                                            IconImageName="ShowPasswordButtonIcon" />
+                                        </EventTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                                <Image
+                                x:Name="ShowPasswordButtonIcon"
+                                HeightRequest="20"
+                                HorizontalOptions="Fill"
+                                InputTransparent="True"
+                                VerticalOptions="Center"
+                                WidthRequest="25" >
+                                    <Image.Source>
+                                        <OnPlatform x:TypeArguments="FileImageSource">
+                                            <On Platform="iOS">showicon.png</On>
+                                            <On Platform="Android">showicon.png</On>
+                                        </OnPlatform>
+                                    </Image.Source>
+                                </Image>
+                            </Grid>
+                        </Grid>
+
+
+
+
+
+
+
+
+                        <ActivityIndicator IsRunning="{Binding IsRunning}">
+                        </ActivityIndicator>
+
+                        <Services:GradientButton Text="Ingresar"
+                                         Grid.Row="2"
+                                         x:Name="BotonSiguiente"
+                                         StartColor="#000046"
+                                         EndColor="#1CB5E0"
+                                         TextColor="White"
+                                         HorizontalOptions="CenterAndExpand"
+                                         Margin="5"
+                                         Padding="10"
+                                         Command="{Binding LoginCommand}"
+                                         IsEnabled="{Binding IsEnabled}"></Services:GradientButton>
+
+                    </Grid>
+
+
+
+                    <Label Text="ó Inicia con:" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold"/>
+
+                    <Grid VerticalOptions="End" Margin="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ImageButton Source="LogoFb" Command="{Binding LoginFacebookCommand}" IsEnabled="{Binding IsEnabled}" Grid.Column="0" Grid.Row="0" BackgroundColor="Transparent" HorizontalOptions="Center"/>
+                        <ImageButton Source="LogoGoogle" Grid.Column="1" Grid.Row="0" IsEnabled="{Binding IsEnabled}" BackgroundColor="Transparent" HorizontalOptions="Center"/>
+                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="¿Aún no tienes una cuenta?" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Medium"/>
+                        <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Registrate" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Large" TextDecorations="Underline" FontAttributes="Bold">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer
+                        Tapped="Registrarse" Command="{Binding RegisterTypeCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+
+
+                </StackLayout>
+
+
+            </StackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>

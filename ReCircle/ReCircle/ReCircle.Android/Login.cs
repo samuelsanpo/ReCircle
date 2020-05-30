@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Firebase.Auth;
 using Xamarin.Forms;
 
+[assembly: Dependency(typeof(FireAuth.Droid.Login))]
 namespace FireAuth.Droid
 {
     public class Login : IAuth

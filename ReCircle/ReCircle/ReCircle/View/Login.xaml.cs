@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ReCircle
+namespace ReCircle.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class Login : TabbedPage
     {
-        public MainPage()
+        public Login()
         {
             InitializeComponent();
         }

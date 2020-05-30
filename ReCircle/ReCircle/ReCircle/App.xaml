@@ -4,8 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:infra="clr-namespace:ReCircle.Infraestructure;assembly=ReCircle"
              x:Class="ReCircle.App">
     <Application.Resources>
+
+         <!-- Locator -->
+            <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
 
     </Application.Resources>
 </Application>

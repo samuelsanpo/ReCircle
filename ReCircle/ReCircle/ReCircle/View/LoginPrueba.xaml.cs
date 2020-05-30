@@ -29,9 +29,15 @@ namespace ReCircle.View
 
         async void Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            string a = auth.pru("hola", "hola");
-            await DisplayAlert(a, "E-mail or password are incorrect. Try again!", "OK");
-            //string Token = await auth.LoginWithEmailPassword("Jordanlosa97@gmail.com", "123");
+            string Token = await auth.LoginWithEmailPassword(EmailInput.Text, PasswordInput.Text);
+            if (Token != "")
+            {
+                await DisplayAlert("Good", "E-mail or password are incorrect. Try again!", "OK");
+            }
+            else
+            {
+                ShowError();
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ namespace FireAuth.Droid
             try
             {
                 var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);
+                Console.WriteLine("Hola");
                 var token = await user.User.GetIdTokenAsync(false);
                 return token.Token;
             }

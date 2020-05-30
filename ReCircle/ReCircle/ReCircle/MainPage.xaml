@@ -24,22 +24,23 @@
 
                 <Label 
             Text="BIENVENIDO" 
+             TextColor="White" 
             HorizontalOptions="CenterAndExpand" 
-                    TextColor="#57AA33"
             VerticalOptions="Start" 
             FontSize="Large" 
             FontAttributes="Bold" 
             Scale="1"/>
 
                 <Label Text="Inicio de Sesión" 
+               TextColor="White" 
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Start" 
-                       TextColor="#57AA33"
                FontSize="Medium" 
                FontAttributes="Bold"
                Scale="0.75"/>
 
                 <Label Text="{Binding Message}" 
+               TextColor="White" 
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Start"
                IsVisible="{Binding IsVisible}"
@@ -57,22 +58,23 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <Services:StandardEntry
-                        x:Name="Celular"
-                        ClearButtonVisibility="WhileEditing"
-                        Grid.Row="0"
-                        Margin="0,0,0,10"
-                        Padding="10"
-                        BackgroundColor="#31FFFFFF"
-                        BorderColor="{Binding ColorEntryPhone}"
-                        BorderThickness="1"
-                        FontSize="Medium" 
-                        CornerRadius="8"
-                        Placeholder="Número de celular"
-                        Keyboard ="Telephone"
-                        PlaceholderColor="LightSlateGray" 
-                        MaxLength="10"
-                        Text="{Binding UserName}"
-                            />
+                x:Name="Celular"
+                ClearButtonVisibility="WhileEditing"
+                Grid.Row="0"
+                Margin="0,0,0,10"
+                Padding="10"
+                BackgroundColor="#31FFFFFF"
+                BorderColor="{Binding ColorEntryPhone}"
+                BorderThickness="1"
+                FontSize="Medium" 
+                TextColor="White"
+                CornerRadius="8"
+                Placeholder="Número de celular"
+                Keyboard ="Telephone"
+                PlaceholderColor="LightSlateGray" 
+                MaxLength="10"
+                Text="{Binding UserName}"
+                    />
 
                         <Grid
                             Grid.Row="1"
@@ -91,6 +93,7 @@
                         BackgroundColor="#31FFFFFF"
                         BorderColor="{Binding ColorEntryPassword}"
                         BorderThickness="1"
+                        TextColor="White"
                         CornerRadius="8"
                         Placeholder="Contraseña"
                         PlaceholderColor="LightSlateGray"
@@ -149,8 +152,8 @@
                         <Services:GradientButton Text="Ingresar"
                                          Grid.Row="2"
                                          x:Name="BotonSiguiente"
-                                         StartColor="#5FDD9E"
-                                         EndColor="#57AA33"
+                                         StartColor="#000046"
+                                         EndColor="#1CB5E0"
                                          TextColor="White"
                                          HorizontalOptions="CenterAndExpand"
                                          Margin="5"
@@ -162,7 +165,7 @@
 
 
 
-                    <Label Text="ó Inicia con:" TextColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold"/>
+                    <Label Text="ó Inicia con:" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold"/>
 
                     <Grid VerticalOptions="End" Margin="20">
                         <Grid.ColumnDefinitions>
@@ -177,11 +180,11 @@
 
                         <ImageButton Source="LogoFb" Command="{Binding LoginFacebookCommand}" IsEnabled="{Binding IsEnabled}" Grid.Column="0" Grid.Row="0" BackgroundColor="Transparent" HorizontalOptions="Center"/>
                         <ImageButton Source="LogoGoogle" Grid.Column="1" Grid.Row="0" IsEnabled="{Binding IsEnabled}" BackgroundColor="Transparent" HorizontalOptions="Center"/>
-                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="¿Aún no tienes una cuenta?" TextColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Medium"/>
-                        <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Registrate" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Large" TextDecorations="Underline" FontAttributes="Bold">
+                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="¿Aún no tienes una cuenta?" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Medium"/>
+                        <Label Grid.Row="2" Grid.ColumnSpan="2" Text="a" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Large" TextDecorations="Underline" FontAttributes="Bold">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer
-                                Tapped="Registrarse" Command="{Binding RegisterTypeCommand}"/>
+                        Tapped="TapGestureRecognizer_Tapped" Command="{Binding RegisterTypeCommand}"/>
                             </Label.GestureRecognizers>
                         </Label>
                     </Grid>

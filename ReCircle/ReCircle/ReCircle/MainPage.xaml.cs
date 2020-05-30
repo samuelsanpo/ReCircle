@@ -17,5 +17,10 @@ namespace ReCircle
         {
             InitializeComponent();
         }
+
+        private async void Registrarse(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new Verificacion());
+        }
     }
 }

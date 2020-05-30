@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ReCircle.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : TabbedPage
+    public partial class RegisterPage : ContentPage
     {
-        public Login()
+        public RegisterPage()
         {
             InitializeComponent();
         }

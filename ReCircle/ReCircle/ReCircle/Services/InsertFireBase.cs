@@ -16,7 +16,7 @@ namespace ReCircle.Services
 
         private readonly string ChildName = "Persons";
 
-        readonly FirebaseClient firebase = new FirebaseClient("https://[YOUR_FIREBASE_DATABASE].firebaseio.com/");
+        readonly FirebaseClient firebase = new FirebaseClient("https://recircle-d8492.firebaseio.com/");
 
         public async Task<List<Person>> GetAllPersons()
         {

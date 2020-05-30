@@ -17,8 +17,6 @@
             </Grid.RowDefinitions>
             <StackLayout BindingContext="{Binding login}" Padding="15,5,15,5" VerticalOptions="CenterAndExpand" Grid.Row="0" HorizontalOptions="FillAndExpand" >
 
-
-
                 <Image Source="LogoPrincipal.png" Margin="0">
                 </Image>
 
@@ -135,12 +133,6 @@
                                 </Image>
                             </Grid>
                         </Grid>
-
-
-
-
-
-
 
 
                         <ActivityIndicator IsRunning="{Binding IsRunning}">

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace Swigs.Servicio
+namespace ReCircle.Servicio
 {
     public sealed class StandardEntry : Entry
     {

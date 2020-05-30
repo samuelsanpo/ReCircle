@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:controls="clr-namespace:ReCircle.Services;assembly=ReCircle"
              xmlns:Services="clr-namespace:ReCircle.Services"
              mc:Ignorable="d"
              x:Class="ReCircle.MainPage"
@@ -56,7 +55,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <controls:StandardEntry
+                        <Services:StandardEntry
                 x:Name="Celular"
                 ClearButtonVisibility="WhileEditing"
                 Grid.Row="0"
@@ -81,7 +80,7 @@
                         HorizontalOptions="FillAndExpand"
                         IsClippedToBounds="True">
 
-                            <controls:StandardEntry
+                            <Services:StandardEntry
                         x:Name="Contraseña" 
                         ClearButtonVisibility="WhileEditing"
                         Grid.Row="0"
@@ -115,7 +114,7 @@
                                     </Button.Margin>
                                     <Button.Triggers>
                                         <EventTrigger Event="Clicked">
-                                            <Servicio:ShowPasswordTriggerAction
+                                            <Services:ShowPasswordTriggerAction
                                             ContraseñaName="Contraseña"
                                             IconImageName="ShowPasswordButtonIcon" />
                                         </EventTrigger>
@@ -148,7 +147,7 @@
                         <ActivityIndicator IsRunning="{Binding IsRunning}">
                         </ActivityIndicator>
 
-                        <controls:GradientButton Text="Ingresar"
+                        <Services:GradientButton Text="Ingresar"
                                          Grid.Row="2"
                                          x:Name="BotonSiguiente"
                                          StartColor="#000046"
@@ -158,7 +157,7 @@
                                          Margin="5"
                                          Padding="10"
                                          Command="{Binding LoginCommand}"
-                                         IsEnabled="{Binding IsEnabled}"></controls:GradientButton>
+                                         IsEnabled="{Binding IsEnabled}"></Services:GradientButton>
 
                     </Grid>
 

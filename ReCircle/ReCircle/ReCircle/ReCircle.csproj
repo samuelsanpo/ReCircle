@@ -20,5 +20,6 @@
     <Folder Include="Services\" />
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
+    <Folder Include="Model\Adapter\" />
   </ItemGroup>
 </Project>

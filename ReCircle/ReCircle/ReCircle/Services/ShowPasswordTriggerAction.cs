@@ -4,7 +4,7 @@ using System.Text;
 using System.Reflection;
 using Xamarin.Forms;
 
-namespace ReCircle.Servicio
+namespace ReCircle.Services
 {
     public class ShowPasswordTriggerAction : TriggerAction<Button>
     {

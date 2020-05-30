@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using FireAuth;
-using FireAuth.Droid;
 using Firebase.Auth;
 using Xamarin.Forms;
 
@@ -9,10 +7,6 @@ namespace FireAuth.Droid
 {
     public class Login : IAuth
     {
-        public Login()
-        {
-        }
-
         async public Task<string> LoginWithEmailPassword(string email, string password)
         {
             try
@@ -26,6 +20,11 @@ namespace FireAuth.Droid
                 e.PrintStackTrace();
                 return "";
             }
+        }
+
+        public string pru(string email, string password)
+        {
+            return email;
         }
     }
 }

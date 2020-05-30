@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using FireAuth;
 using Xamarin.Forms;
 
 namespace ReCircle.View
 {
+    [DesignTimeVisible(true)]
     public partial class LoginPrueba : ContentPage
     {
         IAuth auth;
@@ -27,7 +29,9 @@ namespace ReCircle.View
 
         async void Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            string Token = await auth.LoginWithEmailPassword("Jordanlosa97@gmail.com", "123");
+            string a = auth.pru("hola", "hola");
+            await DisplayAlert(a, "E-mail or password are incorrect. Try again!", "OK");
+            //string Token = await auth.LoginWithEmailPassword("Jordanlosa97@gmail.com", "123");
         }
     }
 }

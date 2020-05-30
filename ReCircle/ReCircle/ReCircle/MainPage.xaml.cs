@@ -19,6 +19,6 @@ namespace ReCircle
 
         void TapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
         {
-        }
+
     }
 }

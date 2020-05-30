@@ -22,6 +22,9 @@ namespace ReCircle
 
             MainPage = new NavigationPage(new LoginPrueba());
 
+
+            MainPage = new NavigationPage(new MainPage());
+
         }
 
 

@@ -6,7 +6,9 @@
              xmlns:Services="clr-namespace:ReCircle.Services"
              mc:Ignorable="d"
              x:Class="ReCircle.MainPage"
-             BackgroundImageSource="Background">
+             BackgroundImageSource="Background"
+             NavigationPage.HasNavigationBar="false"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
 
     <ScrollView VerticalOptions="FillAndExpand">
         <Grid>

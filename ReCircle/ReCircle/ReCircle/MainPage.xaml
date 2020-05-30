@@ -69,10 +69,8 @@
                 FontSize="Medium" 
                 TextColor="White"
                 CornerRadius="8"
-                Placeholder="Número de celular"
-                Keyboard ="Telephone"
+                Placeholder="Correo eléctronico"
                 PlaceholderColor="LightSlateGray" 
-                MaxLength="10"
                 Text="{Binding UserName}"
                     />
 

@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace ReCircle
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainShell : ContentPage
+    public partial class MainShell : Shell
     {
         public MainShell()
         {

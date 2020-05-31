@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Services="clr-namespace:ReCircle.Services"
              xmlns:renderers="clr-namespace:ReCircle.Renderers"
              mc:Ignorable="d"
              BackgroundImageSource="Background"
@@ -62,6 +63,7 @@
                                                 <RowDefinition Height="Auto"/>
                                                 <RowDefinition Height="Auto"/>
                                                 <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
 
                                             <Image
@@ -87,7 +89,8 @@
                                             VerticalOptions="Center"
                                             Text="{Binding Description, StringFormat='{0:C2}'}"
                                             Grid.Row="1"
-                                            Grid.Column="1"/>
+                                            Grid.Column="1"
+                                            Grid.ColumnSpan="2"/>
 
                                             <Label
                                             TextColor="#121212"
@@ -95,6 +98,19 @@
                                             Text="{Binding Price, StringFormat='{0:C2}'}"
                                             Grid.Row="2"
                                             Grid.Column="1"/>
+
+                                            <Services:GradientButton  Text="COMPRAR"
+                                                 x:Name="BotonConfirmar"
+                                                Grid.Row="3"
+                                                 Grid.Column="1"
+                                                 Grid.ColumnSpan="2"
+                                                 StartColor="#5FDD9E"
+                                                 EndColor="#57AA33"
+                                                 TextColor="White"
+                                                 HorizontalOptions="CenterAndExpand"
+                                                 Margin="5"
+                                                 Padding="10"
+                                                />
                                         </Grid>
                                     </StackLayout>
                                 </Frame>

@@ -50,18 +50,18 @@
                             Grid.Row="0"
                             Grid.Column="0"
                             Grid.ColumnSpan="2">
-                            <Image Source="RecicleButton"/>
+                            <ImageButton Command="{Binding ReciclarCommand}" Source="RecicleButton"/>
                         </yummy:PancakeView>
                        
                         <yummy:PancakeView
                             Grid.Row="1"
                             Grid.Column="0">
-                            <Image Source="RedimeButton"/>
+                            <ImageButton Command="{Binding SemillaCommand}" Source="RedimeButton"/>
                         </yummy:PancakeView>
                         <yummy:PancakeView
                             Grid.Row="1"
                             Grid.Column="1">
-                            <Image Source="ComunicaButton"/>
+                            <ImageButton Command="{Binding ContactoCommand}" Source="ComunicaButton"/>
                         </yummy:PancakeView>
                     </Grid>
                     </StackLayout>

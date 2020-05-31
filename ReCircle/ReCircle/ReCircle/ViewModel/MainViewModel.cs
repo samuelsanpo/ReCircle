@@ -112,10 +112,28 @@ namespace ReCircle.ViewModel
         }
         #endregion
         public ICommand RefreshCommand { get { return new RelayCommand(Refresh); } }
+        public ICommand ReciclaCommand { get { return new RelayCommand(Recicla); } }
+        public ICommand ContactoCommand { get { return new RelayCommand(Contacto); } }
+        public ICommand SemillaCommand { get { return new RelayCommand(Semilla); } }
 
         public void Refresh()
         {
             LoadProducts();
+        }
+
+        public async void Recicla()
+        {
+            await navigationService.Navigate("Reciclar");
+        }
+
+        public async void Contacto()
+        {
+            await navigationService.Navigate("Arbol");
+        }
+
+        public async void Semilla()
+        {
+            await navigationService.Navigate("Semilla");
         }
 
         #region Commands

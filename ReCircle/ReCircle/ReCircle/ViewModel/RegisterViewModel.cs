@@ -265,6 +265,7 @@ namespace ReCircle.ViewModel
             if (uid != "")
             {
                 await service.AddClient(uid, Name, Role, LastName, Mobile, Address, Birth, Email, Document, Gender, Verification, true);
+                await navigationService.Navigate("Principal");
             }
             else
             {

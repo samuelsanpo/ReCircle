@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Animations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,8 @@ namespace ReCircle.View
         {
             InitializeComponent();
         }
+
+
+        public ScaleAnimation Animation { get; internal set; }
     }
 }

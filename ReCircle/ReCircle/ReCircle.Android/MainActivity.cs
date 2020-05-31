@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Firebase;
 
 namespace ReCircle.Droid
 {
@@ -21,6 +22,12 @@ namespace ReCircle.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
+            var options = new FirebaseOptions.Builder()
+                           .SetApplicationId("1:653005824945:android:79ce2804f319cccb659390")
+                           .SetApiKey("AIzaSyA9gKgu3IOHDlJvDmxJz_F88jpjDVSY2eE")
+                           .SetDatabaseUrl("https://recircle-d8492.firebaseio.com/").Build();
+            //var fapp = FirebaseApp.InitializeApp(this, options);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

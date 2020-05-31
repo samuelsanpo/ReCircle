@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Firebase.Database;
 using Firebase.Database.Query;
 using ReCircle.Model;
+using ReCircle.Model.Adapter;
 
 namespace ReCircle.Services
 {
@@ -14,64 +15,105 @@ namespace ReCircle.Services
         {
         }
 
-        private readonly string ChildName = "Persons";
+        private readonly string ChildName = "Clients";
 
         readonly FirebaseClient firebase = new FirebaseClient("https://recircle-d8492.firebaseio.com/");
 
-        public async Task<List<Person>> GetAllPersons()
+        public async Task<List<Client>> GetAllClients()
         {
             return (await firebase
                 .Child(ChildName)
-                .OnceAsync<Person>()).Select(item => new Person
+                .OnceAsync<Client>()).Select(item => new Client
                 {
                     Name = item.Object.Name,
-                    PersonId = item.Object.PersonId,
-                    Phone = item.Object.Phone
+                    UserId = item.Object.UserId,
+                    Role = item.Object.Role,
+                    LastName = item.Object.LastName,
+                    Mobile = item.Object.Mobile,
+                    Address = item.Object.Address,
+                    Birthday = item.Object.Birthday,
+                    Email = item.Object.Email,
+                    Document  = item.Object.Document,
+                    Calification = item.Object.Gender,
+                    IsActive =  item.Object.IsActive
                 }).ToList();
         }
 
-        public async Task AddPerson(string name, string phone)
+        public async Task AddClient(string userId,string name,int role,string lastname
+            , string mobile, string address,DateTime birth,string email,string document,string gender
+            ,string verification,bool isActive)
         {
             await firebase
                 .Child(ChildName)
-                .PostAsync(new Person() { PersonId = Guid.NewGuid(), Name = name, Phone = phone });
+                .Child(userId)
+                .PostAsync(new Client()
+                {
+                    Name = name,
+                    UserId = userId,
+                    Role = role,
+                    LastName = lastname,
+                    Mobile = mobile,
+                    Address = address,
+                    Birthday = birth,
+                    Email = email,
+                    Document = document,
+                    Calification = gender,
+                    VerificationCode = verification,
+                    IsActive = isActive
+                });
         }
 
-        public async Task<Person> GetPerson(Guid personId)
+        public async Task<Client> GetClient(string personId)
         {
-            var allPersons = await GetAllPersons();
+            var allPersons = await GetAllClients();
             await firebase
                 .Child(ChildName)
-                .OnceAsync<Person>();
-            return allPersons.FirstOrDefault(a => a.PersonId == personId);
+                .OnceAsync<Client>();
+            return allPersons.FirstOrDefault(a => a.UserId == personId);
         }
 
-        public async Task<Person> GetPerson(string name)
+        public async Task<Client> GetClientByName(string name)
         {
-            var allPersons = await GetAllPersons();
+            var allPersons = await GetAllClients();
             await firebase
                 .Child(ChildName)
-                .OnceAsync<Person>();
+                .OnceAsync<Client>();
             return allPersons.FirstOrDefault(a => a.Name == name);
         }
 
-        public async Task UpdatePerson(Guid personId, string name, string phone)
+        public async Task UpdateClient(string userId, string name, int role, string lastname
+            , string mobile, string address, DateTime birth, string email, string document, string gender
+            , string verification, bool isActive)
         {
             var toUpdatePerson = (await firebase
                 .Child(ChildName)
-                .OnceAsync<Person>()).FirstOrDefault(a => a.Object.PersonId == personId);
+                .OnceAsync<Client>()).FirstOrDefault(a => a.Object.UserId == userId);
 
             await firebase
                 .Child(ChildName)
-                .Child(toUpdatePerson.Key)
-                .PutAsync(new Person() { PersonId = personId, Name = name, Phone = phone });
+                .Child(userId)
+                .PutAsync(new Client()
+                {
+                    Name = name,
+                    UserId = userId,
+                    Role = role,
+                    LastName = lastname,
+                    Mobile = mobile,
+                    Address = address,
+                    Birthday = birth,
+                    Email = email,
+                    Document = document,
+                    Calification = gender,
+                    VerificationCode = verification,
+                    IsActive = isActive
+                });
         }
 
-        public async Task DeletePerson(Guid personId)
+        public async Task DeleteClient(string personId)
         {
             var toDeletePerson = (await firebase
                 .Child(ChildName)
-                .OnceAsync<Person>()).FirstOrDefault(a => a.Object.PersonId == personId);
+                .OnceAsync<Client>()).FirstOrDefault(a => a.Object.UserId == personId);
             await firebase.Child(ChildName).Child(toDeletePerson.Key).DeleteAsync();
         }
     }

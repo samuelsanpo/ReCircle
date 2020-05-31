@@ -25,6 +25,12 @@ namespace ReCircle.Services
                 case "Maps":
                     await App.Current.MainPage.Navigation.PushAsync(new Maps());
                     break;
+                case "Semilla":
+                    await App.Current.MainPage.Navigation.PushAsync(new SemillaPage());
+                    break;
+                case "Arbol":
+                    await App.Current.MainPage.Navigation.PushAsync(new ArbolPage());
+                    break;
                 default:
                     break;
             }

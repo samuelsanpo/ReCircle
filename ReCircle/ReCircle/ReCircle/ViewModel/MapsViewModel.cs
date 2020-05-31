@@ -216,7 +216,6 @@ namespace ReCircle.ViewModel
                     //FirstCamera = "4.00542,-7.748585, 15";
                     Latitude = location.Latitude;
                     Longitude = location.Longitude;
-                    await dialogService.ShowMessage(Latitude.ToString(), Longitude.ToString());
 
                     AddressMethod();
 

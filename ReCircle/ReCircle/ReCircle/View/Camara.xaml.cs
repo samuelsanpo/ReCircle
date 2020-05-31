@@ -63,7 +63,7 @@ namespace ReCircle.View
 
             //var result = await client.ClassifyImageAsync(KeysAndUrls.ProjectId, KeysAndUrls.IterationName, imageStream);
             //var bestResult = result.Predictions.OrderByDescending(p => p.Probability).FirstOrDefault();
-            var result = await DependencyService.Resolve<IPlatformPredictionService>().Classify(imageStream);
+            //var result = await DependencyService.Resolve<IPlatformPredictionService>().Classify(imageStream);
 
             // If you go with the OnDeviceCustomVision plugin you can simply do this as well
             // var tags = await CrossImageClassifier.Current.ClassifyImage(imageStream);

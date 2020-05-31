@@ -14,9 +14,16 @@
             </Grid.RowDefinitions>
 
             <maps:Map x:Name="map"
+                      CameraChanged="map_CameraChanged"
+                      MapLongClicked="map_MapLongClicked"
                       InitialCameraUpdate="-23.68, -46.87, 11"
                       VerticalOptions="FillAndExpand">
+
             </maps:Map>
+            
+        
+            <Label x:Name="latitutedText"  Text="lat: long:" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
         </Grid>
     </ContentPage.Content>
+   
 </ContentPage>

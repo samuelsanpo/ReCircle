@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Firebase;
+using Xam.Plugins.OnDeviceCustomVision;
 
 namespace ReCircle.Droid
 {
@@ -23,7 +24,8 @@ namespace ReCircle.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
-            
+            // Initialize OnDeviceCustomVision plugin
+            AndroidImageClassifier.Init();
             //var fapp = FirebaseApp.InitializeApp(this, options);
             LoadApplication(new App());
         }

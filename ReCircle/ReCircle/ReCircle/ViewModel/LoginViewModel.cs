@@ -221,7 +221,9 @@ namespace ReCircle.ViewModel
                 return;
             }
 
-            string Token = await auth.LoginWithEmailPassword("Dani-s-05@hotmail.com", "123");
+            var passwordEncrypt = encryptService.Encrypt(Password);
+
+            string Token = await auth.LoginWithEmailPassword(UserName, passwordEncrypt);
             if (Token != "")
             {
                 await navigationService.Navigate("Principal");
@@ -237,8 +239,6 @@ namespace ReCircle.ViewModel
 
             //var passwordEncrypt = encryptService.Encrypt(Password);
 
-
-            
 
         }
 

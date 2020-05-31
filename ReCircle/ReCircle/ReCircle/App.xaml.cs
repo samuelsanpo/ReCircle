@@ -18,11 +18,9 @@ namespace ReCircle
             InitializeComponent();
 
 
-            MainPage = new NavigationPage(new LoginPrueba());
+            MainPage = new NavigationPage(new MainPage());
 
         }
-
-
 
         protected override void OnStart()
         {

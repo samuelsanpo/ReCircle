@@ -7,10 +7,11 @@
              x:Class="ReCircle.View.RegisterPage"
              NavigationPage.HasNavigationBar="False"
              xmlns:Services="clr-namespace:ReCircle.Services"
-             BackgroundImageSource="Background">
+             BackgroundImageSource="Background"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
 
 
-    <StackLayout Padding="30" BindingContext="{Binding verification}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+    <StackLayout Padding="30" BindingContext="{Binding register}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
 
 
 

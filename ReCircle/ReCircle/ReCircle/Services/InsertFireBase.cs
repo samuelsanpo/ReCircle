@@ -59,7 +59,7 @@ namespace ReCircle.Services
                     Document = document,
                     Calification = gender,
                     VerificationCode = verification,
-                    IsActive = false
+                    IsActive = isActive
                 });
         }
 

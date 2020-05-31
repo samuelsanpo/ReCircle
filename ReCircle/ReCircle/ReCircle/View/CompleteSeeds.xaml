@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:Services="clr-namespace:ReCircle.Services"
-             x:Class="ReCircle.View.CompleteSeeds">
+             x:Class="ReCircle.View.CompleteSeeds"
+             Shell.BackgroundColor="#5FDD9E">
     <ContentPage.Content>
         <StackLayout>
             <Image Source="LogoPrincipal" HorizontalOptions="Center"/>

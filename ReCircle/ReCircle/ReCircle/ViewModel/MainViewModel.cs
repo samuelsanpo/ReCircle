@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -115,8 +115,12 @@ namespace ReCircle.ViewModel
         public ICommand ReciclaCommand { get { return new RelayCommand(Recicla); } }
         public ICommand ContactoCommand { get { return new RelayCommand(Contacto); } }
         public ICommand SemillaCommand { get { return new RelayCommand(Semilla); } }
+
         public ICommand ComprarCommand { get { return new RelayCommand(Comprar); } }
         public ICommand ConfirmCommand { get { return new RelayCommand(Confirm); } }
+
+        public ICommand PointsCommand { get { return new RelayCommand(Points); } }
+
 
         public void Refresh()
         {
@@ -136,6 +140,11 @@ namespace ReCircle.ViewModel
         public async void Semilla()
         {
             await navigationService.Navigate("Semilla");
+        }
+        
+        public async void Points()
+        {
+            await navigationService.Navigate("Points");
         }
 
         public async void Comprar()

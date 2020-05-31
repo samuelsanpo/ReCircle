@@ -16,8 +16,6 @@
         <ToolbarItem BindingContext="{Binding maps}" IconImageSource="LocationIcon.png" Command="{Binding MapsCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
 
-    
-
     <StackLayout Padding="0" Margin="0">
             <SearchBar
            Placeholder="Buscar"

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using ReCircle.View;
 using ReCircle.ViewModel;
@@ -46,6 +46,9 @@ namespace ReCircle.Services
                     break;
                 case "Confirm":
                     await PopupNavigation.PopAsync();
+
+                case "Points":
+                    await App.Current.MainPage.Navigation.PushAsync(new PointsPage());
                     break;
                 default:
                     break;

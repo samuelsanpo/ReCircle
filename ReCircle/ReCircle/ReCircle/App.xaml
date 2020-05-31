@@ -10,6 +10,16 @@
 
          <!-- Locator -->
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
+       
+        
+        <Style x:Key="ChipFrame" TargetType="Frame">
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="CornerRadius" Value="14" />
+            <Setter Property="Padding" Value="20, 6, 20, 6" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+
 
     </Application.Resources>
 </Application>

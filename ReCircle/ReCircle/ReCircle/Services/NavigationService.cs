@@ -31,6 +31,9 @@ namespace ReCircle.Services
                 case "Semilla":
                     await App.Current.MainPage.Navigation.PushAsync(new SemillaPage());
                     break;
+                case "Reciclar":
+                    await App.Current.MainPage.Navigation.PushAsync(new Camara());
+                    break;
                 case "Arbol":
                     await App.Current.MainPage.Navigation.PushAsync(new ArbolPage());
                     break;
@@ -46,7 +49,7 @@ namespace ReCircle.Services
                     break;
                 case "Confirm":
                     await PopupNavigation.PopAsync();
-
+                    break;
                 case "Points":
                     await App.Current.MainPage.Navigation.PushAsync(new PointsPage());
                     break;

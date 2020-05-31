@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Firebase;
+using Xam.Plugins.OnDeviceCustomVision;
 
 namespace ReCircle.Droid
 {
@@ -29,6 +30,7 @@ namespace ReCircle.Droid
                            .SetApiKey("AIzaSyA9gKgu3IOHDlJvDmxJz_F88jpjDVSY2eE")
                            .SetDatabaseUrl("https://recircle-d8492.firebaseio.com/").Build();
             //var fapp = FirebaseApp.InitializeApp(this, options);
+            AndroidImageClassifier.Init();
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

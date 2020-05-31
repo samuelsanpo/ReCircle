@@ -103,11 +103,13 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="TensorFlowService.cs" />
   </ItemGroup>
   <ItemGroup>
     <GoogleServicesJson Include="Assets\google-services.json" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\model.pb" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -858,6 +860,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\SemillaNon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\labels.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\file_paths.xml" />
   </ItemGroup>
   <Target Name="RemoveGoogleServicesJsonStampFiles" BeforeTargets="BeforeBuild">
     <Delete Files="$(IntermediateOutputPath)\ProcessGoogleServicesJson.stamp" />

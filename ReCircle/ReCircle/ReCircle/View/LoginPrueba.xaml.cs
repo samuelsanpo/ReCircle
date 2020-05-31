@@ -39,5 +39,6 @@ namespace ReCircle.View
                 ShowError();
             }
         }
+
     }
 }

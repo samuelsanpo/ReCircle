@@ -102,7 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReCircle\ReCircle.csproj">
-      <Project>{D812665F-1106-4BF7-A988-1C7505E0CD05}</Project>
+      <Project>{5A89C859-9AD0-4E31-8428-769EFC1B6B99}</Project>
       <Name>ReCircle</Name>
     </ProjectReference>
   </ItemGroup>

@@ -31,6 +31,13 @@
             BackgroundColor="#4682B4"
             TextColor="White"
             />
-        
+        <Button
+            x:Name="Register"
+            Text="Enter"
+            Clicked="Register_Clicked"
+            Margin="60, 40"
+            BackgroundColor="#4682B4"
+            TextColor="White"
+            />
     </StackLayout>
 </ContentPage>

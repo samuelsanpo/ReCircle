@@ -18,37 +18,29 @@
             <Label Padding="0,0,0,0" Text="Un ultimo paso" TextColor="#57AA33" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Large" FontAttributes="Bold"/>
             <Label Padding="0,10,0,0" Text="Cuéntanos más sobre ti" TextColor="#57AA33" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold"/>
         </StackLayout>
-
+        <Frame Opacity="0.7">
         <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <StackLayout Padding="0" Margin="0">
-                <Grid>
+                
                     <Entry x:Name="Nombre" Text="{Binding Name}" ClearButtonVisibility="WhileEditing" Placeholder="Nombre(s)" PlaceholderColor="Gray" HorizontalTextAlignment="Center" ></Entry>
-                </Grid>
-                <Grid>
+                
                     <Entry x:Name="Apellido" Text="{Binding LastName}" ClearButtonVisibility="WhileEditing" Placeholder="Apellido(s)" PlaceholderColor="Gray" HorizontalTextAlignment="Center"></Entry>
-                </Grid>
-                <Grid>
+                
                     <Entry x:Name="Documento" Text="{Binding Document}" ClearButtonVisibility="WhileEditing" Placeholder="Documento de Identidad" Keyboard="Numeric" PlaceholderColor="Gray" HorizontalTextAlignment="Center" ></Entry>
-                </Grid>
-                <Grid>
+                
                     <Entry x:Name="Correo" Text="{Binding Email}" ClearButtonVisibility="WhileEditing" Placeholder="Correo electrónico" Keyboard="Email" PlaceholderColor="Gray" HorizontalTextAlignment="Center" ></Entry>
-                </Grid>
-                <Grid>
+                
                     <Entry x:Name="Contraseña" Text="{Binding Password}" ClearButtonVisibility="WhileEditing" Placeholder="Contraseña Nueva" IsPassword="True" PlaceholderColor="Gray" HorizontalTextAlignment="Center" ></Entry>
-                </Grid>
 
-                <Grid>
-                    <Entry x:Name="ConfirmeContraseña" Text="{Binding PasswordRepeat}" ClearButtonVisibility="WhileEditing" HorizontalOptions="Center" Placeholder=" Confirma Contraseña" IsPassword="True" PlaceholderColor="Gray" HorizontalTextAlignment="Center" ></Entry>
-                </Grid>
-
-                <Grid>
-                    <Picker Title="Seleccione Género" SelectedItem="{Binding Gender}" TitleColor="Gray" HorizontalOptions="CenterAndExpand">
+                    <Entry x:Name="ConfirmeContraseña" Text="{Binding PasswordRepeat}" ClearButtonVisibility="WhileEditing" Placeholder="Confirma tu Contraseña" IsPassword="True" PlaceholderColor="Gray" HorizontalTextAlignment="Center" ></Entry>
+                    
+                    <Picker Title="Seleccione Género" SelectedItem="{Binding Gender}" TitleColor="Gray" HorizontalOptions="FillAndExpand">
                         <Picker.Items>
                             <x:String>Masculino</x:String>
                             <x:String>Femenino</x:String>
                         </Picker.Items>
                     </Picker>
-                </Grid>
+                
 
                 <Grid>
 
@@ -57,7 +49,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="Cumpleaños" TextColor="#57AA33" Grid.Column="0" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="End"/>
+                        <Label Text="Cumpleaños" Grid.Column="0" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="End"/>
                         <DatePicker x:Name="FechaNacimientoR" Grid.Column="1" MinimumDate="01/01/1950" MaximumDate="12/31/2018" Date="01/01/2000" TextColor="#57AA33" HorizontalOptions="Start"/>
                     </Grid>
 
@@ -68,21 +60,22 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <CheckBox x:Name="Terminos" IsChecked="{Binding Terminos}" VerticalOptions="Center" Grid.Column="0" HorizontalOptions="End"/>
-                    <Label Text="Aceptar terminos y condiciones" TextColor="White" Padding="0" VerticalOptions="Center" Grid.Column="1" HorizontalOptions="Start" TextDecorations="Underline" FontAttributes="Bold"/>
+                    <CheckBox x:Name="Terminos" IsChecked="{Binding Terminos}" VerticalOptions="Center" Color="Green" Grid.Column="0" HorizontalOptions="End"/>
+                    <Label Text="Aceptar terminos y condiciones" Padding="0" VerticalOptions="Center" Grid.Column="1" HorizontalOptions="Start" TextDecorations="Underline" FontAttributes="Bold"/>
                 </Grid>
                 <Grid>
 
                 </Grid>
             </StackLayout>
 
-        </ScrollView>
+            </ScrollView>
+        </Frame>
 
         <Services:GradientButton Text="CONTINUAR"
                                          x:Name="BotonContinuar"
-                                         StartColor="#000046"
-                                         EndColor="#1CB5E0"
-                                         TextColor="White"
+                                         StartColor="White"
+                                         EndColor="White"
+                                         TextColor="#5FDD9E"
                                          HorizontalOptions="CenterAndExpand"
                                          BackgroundColor="Transparent"
                                          VerticalOptions="End"

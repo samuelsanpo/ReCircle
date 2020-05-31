@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace ReCircle.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PopupConfirm : ContentPage
+    public partial class PopupConfirm //: PopupPage
     {
         public PopupConfirm()
         {

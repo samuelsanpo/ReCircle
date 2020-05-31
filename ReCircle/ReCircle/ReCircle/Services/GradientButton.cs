@@ -7,7 +7,7 @@ using Color = Xamarin.Forms.Color;
 using Point = NGraphics.Point;
 using TextAlignment = Xamarin.Forms.TextAlignment;
 
-namespace ReCircle.Servicio
+namespace ReCircle.Services
 {
     public class GradientButton : NControlView
     {

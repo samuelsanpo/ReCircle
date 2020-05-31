@@ -14,8 +14,9 @@ namespace ReCircle.View
 
         public LoginPrueba()
         {
-            auth = DependencyService.Get<IAuth>();
+            
             InitializeComponent();
+            auth = DependencyService.Get<IAuth>();
         }
 
         async private void LoginClicked()

@@ -82,7 +82,7 @@
     <Compile Include="Login.cs" />
   </ItemGroup>
   <ItemGroup>
-    <GoogleServicesJson Include="google-services.json" />
+    <GoogleServicesJson Include="Assets\google-services.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -242,5 +242,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\Backgroundmenor.png" />
   </ItemGroup>
+  <Target Name="RemoveGoogleServicesJsonStampFiles" BeforeTargets="BeforeBuild">
+    <Delete Files="$(IntermediateOutputPath)\ProcessGoogleServicesJson.stamp" />
+  </Target>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

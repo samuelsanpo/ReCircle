@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Firebase;
 using Firebase.Auth;
 using Xamarin.Forms;
 
@@ -11,7 +12,7 @@ namespace FireAuth.Droid
         async public Task<string> CreateNewUser(string email, string password)
         {
             try
-            {                
+            {
                 var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
                 return user.User.Uid;
             }
@@ -26,7 +27,9 @@ namespace FireAuth.Droid
         {
             try
             {
-                var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);                
+                
+
+                IAuthResult user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);                
                 var token = await user.User.GetIdTokenAsync(false);
                 return token.Token;
             }

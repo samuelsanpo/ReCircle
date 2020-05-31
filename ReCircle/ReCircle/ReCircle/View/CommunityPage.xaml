@@ -43,7 +43,29 @@
             <Label Text="EVENTOS" FontAttributes="Bold"/>
 
             <Frame BackgroundColor="White" CornerRadius="15" Opacity="0.7">
-                
+                <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="EventIcon" HorizontalOptions="Start"/>
+                    <Label Text="Marcha por cambio climático" Grid.Column="1"/>
+                    <Label Text="11/12/20" Grid.Column="2"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                    <Image Source="AddIcon" HorizontalOptions="Start"/>
+                    <Label Text="Agregar Evento" Grid.Column="1"/>
+                </Grid>
+                </StackLayout>
             </Frame>
 
         </StackLayout>

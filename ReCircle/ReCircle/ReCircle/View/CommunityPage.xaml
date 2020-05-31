@@ -8,7 +8,8 @@
              NavigationPage.HasNavigationBar="False"
              Shell.BackgroundColor="#5FDD9E">
     <ContentPage.Content>
-        <StackLayout Padding="10">
+        <ScrollView Padding="10">
+            <StackLayout>
             <Image Source="LogoPrincipal"/>
 
             <Label Text="Bienvenido a la sección de noticias y eventos" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Green"/>
@@ -59,7 +60,7 @@
                 </Grid>
                 </StackLayout>
             </Frame>
-
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

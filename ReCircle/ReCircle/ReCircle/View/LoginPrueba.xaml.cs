@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using FireAuth;
+using ReCircle.Services;
 using Xamarin.Forms;
 
 namespace ReCircle.View
@@ -38,6 +39,21 @@ namespace ReCircle.View
             {
                 ShowError();
             }
+        }
+
+        async void Register_Clicked(System.Object sender, System.EventArgs e)
+        {
+            string uid = await auth.CreateNewUser(EmailInput.Text,PasswordInput.Text);
+            InsertFireBase service = new InsertFireBase();
+            if(uid != "")
+            {
+                //service.AddPerson(uid,)
+            }
+            else
+            {
+                await DisplayAlert("Error", "E-mail or password are incorrect. Try again!", "OK");
+            }
+            
         }
 
     }

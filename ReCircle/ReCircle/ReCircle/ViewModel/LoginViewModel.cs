@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Input;
+using FireAuth;
 using GalaSoft.MvvmLight.Command;
 using ReCircle.Services;
+using Xamarin.Forms;
 
 namespace ReCircle.ViewModel
 {
@@ -22,6 +24,7 @@ namespace ReCircle.ViewModel
         private DialogService dialogService;
         private ApiService apiService;
         private EncryptService encryptService;
+        private IAuth auth;
         #endregion
 
         #region Properties
@@ -161,6 +164,7 @@ namespace ReCircle.ViewModel
             dialogService = new DialogService();
             apiService = new ApiService();
             encryptService = new EncryptService();
+            auth = DependencyService.Get<IAuth>();
             IsEnabled = true;
             ColorEntryPhone = "Black";
             ColorEntryPassword = "Black";
@@ -217,12 +221,24 @@ namespace ReCircle.ViewModel
                 return;
             }
 
+            string Token = await auth.LoginWithEmailPassword("Dani-s-05@hotmail.com", "123");
+            if (Token != "")
+            {
+                await navigationService.Navigate("Principal");
+                IsRunning = false;
+                IsEnabled = true;
+            }
+            else
+            {
+                await dialogService.ShowMessage("Error", "Correo electronico o contraseña incorrectos");
+                IsRunning = false;
+                IsEnabled = true;
+            }
+
             //var passwordEncrypt = encryptService.Encrypt(Password);
 
 
-            await navigationService.Navigate("Principal");
-            IsRunning = false;
-            IsEnabled = true;
+            
 
         }
 

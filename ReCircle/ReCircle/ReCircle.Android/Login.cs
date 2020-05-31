@@ -11,7 +11,7 @@ namespace FireAuth.Droid
         async public Task<string> CreateNewUser(string email, string password)
         {
             try
-            {
+            {                
                 var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
                 return user.User.Uid;
             }

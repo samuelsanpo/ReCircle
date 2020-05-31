@@ -6,10 +6,41 @@
              mc:Ignorable="d"
              x:Class="ReCircle.View.CommunityPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10">
+            <Image Source="LogoPrincipal"/>
+
+            <Label Text="Bienvenido a la sección de noticias y eventos" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Green"/>
+
+            <Label Text="NOTICIAS" FontAttributes="Bold"/>
+
+            <Frame BackgroundColor="White" CornerRadius="15" Opacity="0.7" Margin="6">
+                <StackLayout>
+
+                    <Label Text="EVENTOS" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                    <Grid VerticalOptions="Center" Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="EventIcon" HorizontalOptions="Start" Grid.Column="0"/>
+                    <Label Text="Marcha por cambio climático" Grid.Column="1" VerticalOptions="Center"/>
+                        <Label Text="11/12/20" Grid.Column="2" VerticalOptions="Center"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                    <Image Source="AddIcon" HorizontalOptions="Start"/>
+                        <Label Text="Agregar Evento" Grid.Column="1" VerticalOptions="Center"/>
+                </Grid>
+                </StackLayout>
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

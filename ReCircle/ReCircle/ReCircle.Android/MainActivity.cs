@@ -22,7 +22,7 @@ namespace ReCircle.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            Xamarin.FormsGoogleMaps.Init(this,savedInstanceState);
+            Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
             
             //var fapp = FirebaseApp.InitializeApp(this, options);
             LoadApplication(new App());

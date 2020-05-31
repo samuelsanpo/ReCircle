@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+             xmlns:Services="clr-namespace:ReCircle.Services"
+             mc:Ignorable="d"
+             x:Class="ReCircle.View.PopupConfirm">
+    <StackLayout   VerticalOptions="Center"  HorizontalOptions="Center" Padding="0" Margin="0">
+
+
+        <Frame WidthRequest="200" Padding="15" x:Name="Page" BackgroundColor="White" CornerRadius="20" BorderColor="#2B8FAA" HorizontalOptions="Center">
+
+            <StackLayout>
+                <Label Text="COMPRA REALIZADA CON EXITO!" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                <Image Source="CheckIcon" HorizontalOptions="Center"/>
+                <Services:GradientButton Text="CONFIRMAR"
+                                         x:Name="BotonConfirmar"
+                                         StartColor="#5FDD9E"
+                                         EndColor="#57AA33"
+                                         TextColor="White"
+                                         HorizontalOptions="CenterAndExpand"
+                                         Margin="5"
+                                         Padding="10"
+                                         Command="{Binding LoginCommand}"
+                                         IsEnabled="{Binding IsEnabled}"                    
+                    
+                    />
+
+            </StackLayout>
+        </Frame>
+
+    </StackLayout>
+    </popup:PopupPage>

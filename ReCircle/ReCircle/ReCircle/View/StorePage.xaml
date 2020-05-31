@@ -8,7 +8,8 @@
              BackgroundImageSource="Background"
              x:Class="ReCircle.View.StorePage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Tienda">
+             Title="Tienda"
+             Shell.BackgroundColor="#5FDD9E">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="LocationIcon.png" Command="{Binding LocationCommand}"></ToolbarItem>

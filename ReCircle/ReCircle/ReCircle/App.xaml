@@ -11,5 +11,10 @@
          <!-- Locator -->
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
 
-    </Application.Resources>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#5FDD9E"/>
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+
+        </Application.Resources>
 </Application>

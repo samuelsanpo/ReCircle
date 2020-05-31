@@ -11,6 +11,9 @@
              x:Class="ReCircle.View.ReciclePage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Shell.BackgroundColor="#5FDD9E">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem BindingContext="{Binding maps}" IconImageSource="LocationIcon.png" Command="{Binding MapsCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     
      <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
          <StackLayout>

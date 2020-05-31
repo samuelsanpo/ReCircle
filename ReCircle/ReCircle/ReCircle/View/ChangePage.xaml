@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ReCircle.View.ChangePage"
+             NavigationPage.HasNavigationBar="False"
+             Shell.BackgroundColor="#5FDD9E">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="LogoPrincipal" HorizontalOptions="Center"/>
+            <SearchBar
+               Placeholder="Buscar"
+               BackgroundColor="White"
+               PlaceholderColor="Gray"
+               CancelButtonColor="White"
+             />
+            <ScrollView>
+                <StackLayout>
+            <Image Source="ImgA" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgB" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgC" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgA" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgB" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgC" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgA" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgB" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgC" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

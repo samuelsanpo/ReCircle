@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ReCircle.View.TypePage"
+            BackgroundImageSource="Background"
+             Title="Tu Nevera"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="30,10,30,0" BindingContext="{Binding Products}" >
+
+
+
+            <StackLayout VerticalOptions="Center"  HorizontalOptions="Center" Padding="0" Margin="0" IsVisible="{Binding IsRunning}">
+
+                <Frame WidthRequest="290" HeightRequest="550"
+                       Padding="15" x:Name="Page"
+                       BackgroundColor="White" 
+                       CornerRadius="20" 
+                       BorderColor="Black" 
+                       HasShadow="True">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                    Height="*" />
+                            <RowDefinition
+                    Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid
+                Grid.Row="1"
+                Padding="12"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="EndAndExpand"
+                AutomationId="skip">
+                        </Grid>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+
+
+
+            <ScrollView Padding="10">
+                <Grid RowSpacing="-5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="{Binding IsVisible}" Text="Selecciona una Categoria" TextColor="Black" FontSize="30" HorizontalTextAlignment="Center" FontAttributes="Bold"></Label>
+
+                    <ImageButton Grid.Row="1" Grid.Column="0" Command="{Binding FoodPageCommand}" IsVisible="{Binding IsVisible}" IsEnabled="{Binding IsEnabled}" Source="FoodButton" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"></ImageButton>
+                    <ImageButton Grid.Row="1" Grid.Column="1" Command="{Binding MedicinePageCommand}" IsVisible="{Binding IsVisible}" IsEnabled="{Binding IsEnabled}" Source="MedicineButton" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"></ImageButton>
+
+                    <ImageButton Grid.Row="2" Grid.Column="1" Command="{Binding ClothePageCommand}" IsVisible="{Binding IsVisible}" IsEnabled="{Binding IsEnabled}" Source="ClotheButton" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"></ImageButton>
+                    <ImageButton Grid.Row="2" Grid.Column="0" Command="{Binding CarePageCommand}" IsVisible="{Binding IsVisible}" IsEnabled="{Binding IsEnabled}" Source="CareButton" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"></ImageButton>
+                    
+
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

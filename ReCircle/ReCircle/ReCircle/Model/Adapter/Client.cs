@@ -3,7 +3,7 @@ namespace ReCircle.Model.Adapter
 {
     public class Client
     {
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public int Role { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }

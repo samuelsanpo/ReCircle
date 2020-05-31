@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+            xmlns:Services="clr-namespace:ReCircle.Services;assembly=ReCircle"
+            xmlns:panCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="ReCircle.View.Maps"
+             Shell.BackgroundColor="#5FDD9E"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+
+    <ContentPage.Content>
+        <StackLayout>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout BindingContext="{Binding maps}" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="FillAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <maps:Map x:Name="map"
+                      VerticalOptions="FillAndExpand">
+                    </maps:Map>
+                </Grid>
+            </StackLayout>
+
+            <panCake:PancakeView x:Name="cakeDetail"
+                             Margin="5,0,5,0"
+                             Padding="20"
+                            BackgroundGradientStartColor="White"
+                            BackgroundGradientEndColor="#5FDD9E"  
+                             CornerRadius="30,30,0,0"
+                             HasShadow="True"
+                             VerticalOptions="EndAndExpand"
+                                     BorderColor="#0C2E57"
+                                     Grid.Row="1">
+
+
+                <StackLayout BindingContext="{Binding maps}">
+                        <Label Text="CONFIRMA TU DIRECCIÓN" TextColor="#57AA33" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" IsVisible="{Binding IsVisible}"/>
+                        <Label Text="Te encuentras aqui" TextColor="#57AA33" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" IsVisible="{Binding IsVisibleTwo}"/>
+
+                    <Services:GradientButton Text="Pedir Aqui"
+                                         x:Name="UbicacionActualBoton"
+                                         StartColor="#5FDD9E"
+                                         EndColor="#57AA33"
+                                         TextColor="White"
+                                         HorizontalOptions="CenterAndExpand"
+                                         Margin="5"
+                                         Command="{Binding AceptLocationCommand}"
+                                         IsVisible="{Binding IsVisibleTwo}"/>
+
+
+                    <Services:StandardEntry
+                            x:Name="NombreDir" 
+                            ClearButtonVisibility="WhileEditing"
+                            Padding="10"
+                            Margin="0,0,0,10"
+                            FontSize="Medium" 
+                            BackgroundColor="White"
+                            BorderColor="#57AA33"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Placeholder="Nombre del Lugar"
+                            PlaceholderColor="LightSlateGray"
+                            IsVisible="{Binding IsVisible}"/>
+
+                    <Services:StandardEntry
+                            x:Name="Direccion" 
+                            ClearButtonVisibility="WhileEditing"
+                            Padding="10"
+                            Margin="0,0,0,10"
+                            FontSize="Medium" 
+                            BackgroundColor="White"
+                            BorderColor="#57AA33"
+                            BorderThickness="1"
+                            Text="{Binding Address}"
+                            CornerRadius="8"
+                            Placeholder="Dirección"
+                            PlaceholderColor="LightSlateGray"
+                            IsVisible="{Binding IsVisible}"/>
+
+                    <Services:StandardEntry
+                            x:Name="ExtraDir" 
+                            ClearButtonVisibility="WhileEditing"
+                            Padding="10"
+                            Margin="0,0,0,10"
+                            FontSize="Medium" 
+                            BackgroundColor="White"
+                            BorderColor="#57AA33"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Placeholder="Apartamento, casa, piso..."
+                            PlaceholderColor="LightSlateGray"
+                            IsVisible="{Binding IsVisible}"/>
+
+                     <Services:GradientButton Text="Confirmar"
+                                         x:Name="ConfirmarUbicacionBoton"
+                                         StartColor="#57AA33"
+                                         EndColor="#5FDD9E"
+                                         TextColor="White"
+                                         HorizontalOptions="CenterAndExpand"
+                                         Margin="5"
+                                         Command="{Binding SaveCommand}"
+                                         IsVisible="{Binding IsVisible}"/>
+
+                </StackLayout>
+            </panCake:PancakeView>
+
+        </Grid>
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

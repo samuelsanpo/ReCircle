@@ -1,0 +1,23 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="ReCircle.View.SemillaPage"
+             Shell.BackgroundColor="#5FDD9E">
+    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15">
+        <StackLayout>
+
+            <Image
+                    HorizontalOptions="FillAndExpand"
+                    Source="LogoPrincipal"
+                    WidthRequest="200" 
+                Margin="0,0,0,20"/>
+            <ImageButton x:Name="Cupon"  Grid.Row="0" Source="RecicladorA" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"></ImageButton>
+            <ImageButton x:Name="Otros" Grid.Row="1" Source="RecicladorB" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"></ImageButton>
+            <ImageButton x:Name="OtrosReciclador" Grid.Row="2" Source="RecicladorC" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"></ImageButton>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

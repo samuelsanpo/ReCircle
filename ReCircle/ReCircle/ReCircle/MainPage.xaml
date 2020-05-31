@@ -65,12 +65,10 @@
                         BorderThickness="1"
                         FontSize="Medium" 
                         CornerRadius="8"
-                        Placeholder="Número de celular"
-                        Keyboard ="Telephone"
+                        Placeholder="Correo eléctronico"
                         PlaceholderColor="LightSlateGray" 
-                        MaxLength="10"
                         Text="{Binding UserName}"
-                            />
+                            />      
 
                         <Grid
                             Grid.Row="1"
@@ -173,11 +171,10 @@
                         <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Registrate" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Large" TextDecorations="Underline" FontAttributes="Bold">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer
-                                Tapped="Registrarse" Command="{Binding RegisterTypeCommand}"/>
+                                Tapped="TapGestureRecognizer_Tapped" Command="{Binding RegisterTypeCommand}"/>
                             </Label.GestureRecognizers>
                         </Label>
                     </Grid>
-
 
                 </StackLayout>
 

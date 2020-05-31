@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ReCircle.MainShell"
+             xmlns:View="clr-namespace:ReCircle.View"
+             xmlns:pages="clr-namespace:ReCircle"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Blanco">#FFFFFF</Color>
+            <Color x:Key="Verde">#5FDD9E</Color>
+            <Color x:Key="Gris">gray</Color>
+            <Style x:Key="BarraStyle" TargetType="Element">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Verde}"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource Blanco}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource Gris}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource Blanco}"/>
+
+            </Style>
+
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BarraStyle}"/>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <ContentView BackgroundColor="{StaticResource Blanco}" HeightRequest="245">
+                <Image Source="Icon.png"></Image>
+            </ContentView>
+        </DataTemplate>
+
+    </Shell.FlyoutHeaderTemplate>
+
+    <FlyoutItem Title="Menú de Opciones">
+
+        <Tab Title="Tienda" Icon="StoreIcon.png" >
+            <ShellContent ContentTemplate="{DataTemplate View:StorePage}"/>
+        </Tab>
+
+        <Tab Title="Recicla" Icon="RecicleIcon.png">
+            <ShellContent ContentTemplate="{DataTemplate View:ReciclePage}"/>
+        </Tab>
+        <Tab  Title="Comunidad" Icon="ComunityButton.png">
+            <ShellContent
+                Title="Noticias"
+                ContentTemplate="{DataTemplate View:CommunityPage}" />
+            <ShellContent
+                Title="Intercambios"
+                ContentTemplate="{DataTemplate View:ChangePage}" /> 
+        </Tab>
+
+    </FlyoutItem>
+
+    <MenuItem Text="Perfil" Command="{Binding PerfilCommand}" IconImageSource="Icon.png"/>
+    <MenuItem Text="Favoritos" Command="{Binding FavoritosCommand}" IconImageSource="Icon.png"/>
+    <MenuItem Text="Cupones" IconImageSource="Icon.png"/>
+    <MenuItem Text="Cerrar Sesión" IconImageSource="Icon.png"/>
+
+
+</Shell>

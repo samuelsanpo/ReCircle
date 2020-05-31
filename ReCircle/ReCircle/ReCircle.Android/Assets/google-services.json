@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "653005824945",
+    "firebase_url": "https://recircle-d8492.firebaseio.com",
+    "project_id": "recircle-d8492",
+    "storage_bucket": "recircle-d8492.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653005824945:android:79ce2804f319cccb659390",
+        "android_client_info": {
+          "package_name": "com.companyname.recircle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653005824945-hc8rqc768oviuktcc1gpn8utgssrtu8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9gKgu3IOHDlJvDmxJz_F88jpjDVSY2eE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653005824945-hc8rqc768oviuktcc1gpn8utgssrtu8p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

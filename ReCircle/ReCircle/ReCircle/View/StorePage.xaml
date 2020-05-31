@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Services="clr-namespace:ReCircle.Services"
+             xmlns:renderers="clr-namespace:ReCircle.Renderers"
+             mc:Ignorable="d"
+             BackgroundImageSource="Background"
+             x:Class="ReCircle.View.StorePage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Tienda"
+             Shell.BackgroundColor="#5FDD9E">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem BindingContext="{Binding maps}" IconImageSource="LocationIcon.png" Command="{Binding MapsCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="0" Margin="0">
+            <SearchBar
+           Placeholder="Buscar"
+           BackgroundColor="White"
+           TextColor="black"
+           PlaceholderColor="Gray"
+           CancelButtonColor="White"
+         />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+            <ScrollView Padding="15" Grid.Row="1">
+
+                <ListView x:Name="MyListView"
+                ItemsSource="{Binding ProductsType}"
+                HasUnevenRows="True"      
+                IsPullToRefreshEnabled="True"
+                ItemTapped="MyListView_ItemTapped"
+                RefreshCommand="{Binding RefreshCommand}"
+                IsRefreshing="{Binding IsRefreshing}"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0, 1, 1, 1">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame CornerRadius="10" 
+                                   HasShadow="True"  
+                                   Margin="10"
+                                   BackgroundColor="White"
+                                   HorizontalOptions="FillAndExpand">
+
+                                    <StackLayout Margin="0,10,0,10">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Image
+                                            Source="{Binding UrlImage}"
+                                            VerticalOptions="Center"
+                                            WidthRequest="100"
+                                            HeightRequest="100"
+                                            Grid.Column="0"
+                                            Grid.RowSpan="3"
+                                            Grid.Row="0"/>
+
+                                            <Label
+                                            TextColor="#121212"
+                                            FontAttributes="Bold"            
+                                            VerticalOptions="Center"
+                                            Text="{Binding Name, StringFormat='{0:C2}'}"
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Grid.ColumnSpan="2"/>
+
+                                            <Label
+                                            TextColor="#121212"
+                                            VerticalOptions="Center"
+                                            Text="{Binding Description, StringFormat='{0:C2}'}"
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            Grid.ColumnSpan="2"/>
+
+                                            <Label
+                                            TextColor="#121212"
+                                            VerticalOptions="Center"
+                                            Text="{Binding Price, StringFormat='{0:C2}'}"
+                                            Grid.Row="2"
+                                            Grid.Column="1"/>
+
+                                            <Services:GradientButton  Text="COMPRAR"
+                                                 x:Name="BotonConfirmar"
+                                                Grid.Row="3"
+                                                 Grid.Column="1"
+                                                 Grid.ColumnSpan="2"
+                                                 StartColor="#5FDD9E"
+                                                 EndColor="#57AA33"
+                                                 TextColor="White"
+                                                 HorizontalOptions="CenterAndExpand"
+                                                 Margin="5"
+                                                 Padding="10"
+                                                 Command="{Binding ComprarCommand}"
+                                                />
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </Grid>
+
+
+
+
+    </StackLayout>
+</ContentPage>

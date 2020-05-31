@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             BackgroundImageSource="Background"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:Services="clr-namespace:ReCircle.Services"
+             x:Class="ReCircle.View.Camara"
+             Shell.BackgroundColor="#5FDD9E">
+    <StackLayout
+        VerticalOptions="Center"
+        Margin="20">
+        <Image HeightRequest="300" WidthRequest="300" x:Name="CapturedImage" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+        <Button BackgroundColor="#5FDD9E" TextColor="White" Clicked="Button_Clicked" Text="CAPTURAR MATERIALES"/>
+    </StackLayout>
+</ContentPage>

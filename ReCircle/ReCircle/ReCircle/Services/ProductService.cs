@@ -38,7 +38,7 @@ namespace ReCircle.Services
         {
             var storageImage = await new FirebaseStorage("gs://recircle-d8492.appspot.com")
                 .Child("Images")
-                .Child("name.jpg")
+                .Child(name + ".jpg")
                 .PutAsync(imageStream);
             Guid guid = Guid.NewGuid();
             string a = storageImage;

@@ -7,7 +7,9 @@
             xmlns:Services="clr-namespace:ReCircle.Services;assembly=ReCircle"
             xmlns:panCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
-             x:Class="ReCircle.View.Maps">
+             x:Class="ReCircle.View.Maps"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+
     <ContentPage.Content>
         <StackLayout>
         <Grid VerticalOptions="FillAndExpand">

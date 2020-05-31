@@ -23,6 +23,7 @@ namespace ReCircle.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Xamarin.FormsGoogleMaps.Init("AIzaSyCWRaKjtOIlw3dtNn3sy7YYLRzbQoHL6BM");
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

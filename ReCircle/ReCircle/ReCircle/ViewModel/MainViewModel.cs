@@ -1,22 +1,34 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
+using ReCircle.Services;
+
 namespace ReCircle.ViewModel
 {
-    public class MainViewModel
+    public class MainViewModel : INotifyPropertyChanged
     {
         #region Attributes
+        private NavigationService navigationService;
+        private DialogService dialogService;
         #endregion
 
         #region Properties
         public LoginViewModel login { get; set; }
         public RegisterViewModel register { get; set; }
+        public MapsViewModel maps { get; set; }
         #endregion
 
         #region Constructor
         public MainViewModel()
         {
+            //Services
+            navigationService = new NavigationService();
+            dialogService = new DialogService();
             //ViewModels
             login = new LoginViewModel();
-            register = new RegisterViewModel();
+            //Singleton
+            instance = this;
         }
         #endregion
 
@@ -35,6 +47,11 @@ namespace ReCircle.ViewModel
         #endregion
 
         #region Commands
+        
+        #endregion
+
+        #region Events
+        public event PropertyChangedEventHandler PropertyChanged;
         #endregion
     }
 }

@@ -12,7 +12,7 @@
              Shell.BackgroundColor="#5FDD9E">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="LocationIcon.png" Command="{Binding LocationCommand}"></ToolbarItem>
+        <ToolbarItem BindingContext="{Binding maps}" IconImageSource="LocationIcon.png" Command="{Binding MapsCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
 
     

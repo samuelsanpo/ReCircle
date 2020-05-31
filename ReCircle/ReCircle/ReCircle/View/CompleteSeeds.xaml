@@ -47,7 +47,7 @@
 
                 <Services:GradientButton Text="CANCELAR"
                                          Grid.Column="1"
-                                             x:Name="BotonSiguiente"
+                                             x:Name="Boton"
                                              StartColor="#5FDD9E"
                                              EndColor="#57AA33"
                                              TextColor="White"

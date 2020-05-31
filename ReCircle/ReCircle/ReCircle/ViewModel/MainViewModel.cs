@@ -8,6 +8,7 @@ namespace ReCircle.ViewModel
 
         #region Properties
         public LoginViewModel login { get; set; }
+        public RegisterViewModel register { get; set; }
         #endregion
 
         #region Constructor
@@ -15,6 +16,7 @@ namespace ReCircle.ViewModel
         {
             //ViewModels
             login = new LoginViewModel();
+            register = new RegisterViewModel();
         }
         #endregion
 

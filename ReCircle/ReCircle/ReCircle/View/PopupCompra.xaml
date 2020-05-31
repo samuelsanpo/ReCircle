@@ -16,6 +16,7 @@
 
             <StackLayout>
                 <Label Text="COMPRA REALIZADA CON EXITO!" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                <Label Text="Con tus 25 puntos este pedido no tendrá costo de domicilio" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
                 <Image Source="CheckIcon" HorizontalOptions="Center"/>
                 <Services:GradientButton Text="CONFIRMAR"
                                          x:Name="BotonConfirmar"
@@ -26,9 +27,17 @@
                                          Margin="5"
                                          Padding="10"
                                          Command="{Binding ConfirmCommand}"
-                                         IsEnabled="{Binding IsEnabled}"                    
-                    
-                    />
+                                         IsEnabled="{Binding IsEnabled}"/>
+                <Services:GradientButton Text="CANCELAR"
+                                         x:Name="BotonCancelar"
+                                         StartColor="#57AA33"
+                                         EndColor="#5FDD9E"
+                                         TextColor="White"
+                                         HorizontalOptions="CenterAndExpand"
+                                         Margin="5"
+                                         Padding="10"
+                                         Command="{Binding ConfirmCommand}"
+                                         IsEnabled="{Binding IsEnabled}"/>
 
             </StackLayout>
         </Frame>

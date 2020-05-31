@@ -97,20 +97,6 @@
                                             Text="{Binding Price, StringFormat='{0:C2}'}"
                                             Grid.Row="2"
                                             Grid.Column="1"/>
-
-                                            <Services:GradientButton  Text="COMPRAR"
-                                                 x:Name="BotonConfirmar"
-                                                Grid.Row="3"
-                                                 Grid.Column="1"
-                                                 Grid.ColumnSpan="2"
-                                                 StartColor="#5FDD9E"
-                                                 EndColor="#57AA33"
-                                                 TextColor="White"
-                                                 HorizontalOptions="CenterAndExpand"
-                                                 Margin="5"
-                                                 Padding="10"
-                                                 Command="{Binding ComprarCommand}"
-                                                />
                                         </Grid>
                                     </StackLayout>
                                 </Frame>

@@ -7,9 +7,16 @@
              mc:Ignorable="d"
              BackgroundImageSource="Background"
              x:Class="ReCircle.View.StorePage"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Tienda">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="LocationIcon.png" Command="{Binding LocationCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     
-        <StackLayout Padding="0" Margin="0">
+
+    <StackLayout Padding="0" Margin="0">
             <SearchBar
            Placeholder="Buscar"
            BackgroundColor="White"

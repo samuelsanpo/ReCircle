@@ -16,7 +16,7 @@ namespace ReCircle
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MapsPrueba());
+            MainPage = new NavigationPage(new LoginPrueba());
 
         }
 

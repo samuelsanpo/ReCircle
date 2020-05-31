@@ -34,18 +34,12 @@ namespace ReCircle.Services
                 }).ToList();
         }
 
-        public async Task AddProduct(string name, string Description, int Price, int Stock, Stream imageStream)
+        public async Task AddProduct(string name, string Description, int Price, int Stock, string imageStream, int type)
         {
-            var storageImage = await new FirebaseStorage("gs://recircle-d8492.appspot.com")
-                .Child("Images")
-                .Child(name + ".jpg")
-                .PutAsync(imageStream);
             Guid guid = Guid.NewGuid();
-            string a = storageImage;
             await firebase
                 .Child(ChildName)
-                .Child(guid.ToString())
-                .PostAsync(new Product() {ProductId = guid, Name = name, Description = Description , Price = Price, Stock = Stock ,UrlImage = a });
+                .PostAsync(new Product() { ProductId = guid, Name = name, Description = Description, Price = Price, Stock = Stock, UrlImage = imageStream, Type = type });
         }
 
         public async Task<Product> GetProduct(Guid ProductId)
@@ -65,21 +59,34 @@ namespace ReCircle.Services
                 .OnceAsync<Product>();
             return allProducts.FirstOrDefault(a => a.Name == name);
         }
+        public async Task<Product> GetProduct(int type)
+        {
+            var allProducts = await GetAllProducts();
+            await firebase
+                .Child(ChildName)
+                .OnceAsync<Product>();
+            return allProducts.FirstOrDefault(a => a.Type == type);
+        }
 
-        public async Task UpdateProduct(Guid ProductId, string name, string Description, int Stock, int Price, Stream imageStream)
+        public async Task UpdateProduct(Guid ProductId, string name, string Description, int Stock, int Price, string imageStream, int type)
         {
             var toUpdateProduct = (await firebase
                 .Child(ChildName)
                 .OnceAsync<Product>()).FirstOrDefault(a => a.Object.ProductId == ProductId);
-            var storageImage = await new FirebaseStorage("gs://recircle-d8492.appspot.com")
-                .Child("Images")
-                .Child("name.jpg")
-                .PutAsync(imageStream);
+
             await firebase
                 .Child(ChildName)
                 .Child(toUpdateProduct.Key)
-                .PutAsync(new Product() { ProductId = ProductId, Name = name,Description = Description,
-                    Stock = Stock,  Price = Price , UrlImage = storageImage.ToString() });
+                .PutAsync(new Product()
+                {
+                    ProductId = ProductId,
+                    Name = name,
+                    Description = Description,
+                    Stock = Stock,
+                    Price = Price,
+                    UrlImage = imageStream,
+                    Type = type
+                });
         }
 
         public async Task DeleteProduct(Guid ProductId)

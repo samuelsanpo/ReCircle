@@ -31,7 +31,7 @@ namespace ReCircle.View
         async void Button_Clicked(System.Object sender, System.EventArgs e)
         {
             
-            await DisplayAlert(a, "E-mail or password are incorrect. Try again!", "OK");
+            await DisplayAlert("error", "E-mail or password are incorrect. Try again!", "OK");
             //
         }
 

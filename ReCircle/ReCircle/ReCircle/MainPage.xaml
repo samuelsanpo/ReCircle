@@ -180,8 +180,7 @@
                         <Label Grid.Row="1" Grid.ColumnSpan="2" Text="¿Aún no tienes una cuenta?" TextColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Medium"/>
                         <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Registrate" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" FontSize="Large" TextDecorations="Underline" FontAttributes="Bold">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer
-                                Tapped="Registrarse" Command="{Binding RegisterTypeCommand}"/>
+
                             </Label.GestureRecognizers>
                         </Label>
                     </Grid>

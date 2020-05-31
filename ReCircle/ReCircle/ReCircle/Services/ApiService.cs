@@ -9,6 +9,7 @@ namespace ReCircle.Services
     {
         public async Task<Response> CheckConnection()
         {
+            
             if (!CrossConnectivity.Current.IsConnected)
             {
                 return new Response

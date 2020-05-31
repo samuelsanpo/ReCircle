@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReCircle.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace ReCircle
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new Pic());
         }
 
         protected override void OnStart()

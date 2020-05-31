@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ReCircle.View.Pic">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Image x:Name="ImgSource" Source="Icon.png" MinimumHeightRequest="100"
+                   MinimumWidthRequest="100"
+                   HorizontalOptions="Center"/>
+
+
+                <Button Text="Elegir una foto" Clicked="Button_Choose"/>
+                <Button Text="Tomar una foto" Clicked="Button_Take"/>
+
+            <Button Text="Analizar" Clicked="Button_Analyze"/>
+
+            <Label x:Name="Resultado"/>
+            <ProgressBar x:Name="Precisión" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -39,29 +39,28 @@
 
     <FlyoutItem Title="Menú de Opciones">
 
-        <Tab Title="Tienda" Icon="Icon.png" >
+        <Tab Title="Tienda" Icon="StoreIcon.png" >
             <ShellContent ContentTemplate="{DataTemplate View:StorePage}"/>
         </Tab>
 
-        <Tab Title="Carrito" Icon="carritoIcon.png">
+        <Tab Title="Recicla" Icon="RecicleIcon.png">
             <ShellContent ContentTemplate="{DataTemplate View:ReciclePage}"/>
         </Tab>
-        <Tab  Title="Tus Ordenes" Icon="iconcompra.png">
+        <Tab  Title="Comunidad" Icon="ComunityIcon.png">
             <ShellContent
-                Title="Ordenes Actuales"
-                ContentTemplate="{DataTemplate View:ChangePage}" />
-            <ShellContent
-                Title="Ordenes Anteriores"
+                Title="Noticias"
                 ContentTemplate="{DataTemplate View:CommunityPage}" />
+            <ShellContent
+                Title="Intercambios"
+                ContentTemplate="{DataTemplate View:ChangePage}" /> 
         </Tab>
 
     </FlyoutItem>
 
-    <MenuItem Text="Perfil" Command="{Binding PerfilCommand}" IconImageSource="PerfilIcon.png"/>
-    <MenuItem Text="Tu Opinion" Command="{Binding OpinionCommand}" IconImageSource="IconOpinion.png"/>
-    <MenuItem Text="Favoritos" Command="{Binding FavoritosCommand}" IconImageSource="FavoritosIcon.png"/>
-    <MenuItem Text="Cupones" IconImageSource="ticket.png"/>
-    <MenuItem Text="Cerrar Sesión" IconImageSource="IconCerrarSesion.png"/>
+    <MenuItem Text="Perfil" Command="{Binding PerfilCommand}" IconImageSource="Icon.png"/>
+    <MenuItem Text="Favoritos" Command="{Binding FavoritosCommand}" IconImageSource="Icon.png"/>
+    <MenuItem Text="Cupones" IconImageSource="Icon.png"/>
+    <MenuItem Text="Cerrar Sesión" IconImageSource="Icon.png"/>
 
 
 </Shell>

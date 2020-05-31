@@ -31,23 +31,6 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <StackLayout Grid.Row="0" VerticalOptions="Center">
-                    <CarouselView ItemsSource="{Binding ProductsType}" PeekAreaInsets="100">
-
-                        <CarouselView.ItemTemplate>
-                            <DataTemplate>
-                                <StackLayout Spacing="5">
-                                    <Frame Style="{StaticResource ChipFrame}">
-                                        <Label Style="{StaticResource ChipLabel}" 
-                                           Text="{Binding ProductName}" 
-                                           HorizontalTextAlignment="Center" />
-                                    </Frame>
-                                </StackLayout>
-                            </DataTemplate>
-                        </CarouselView.ItemTemplate>
-                    </CarouselView>
-                </StackLayout>
-
 
             <ScrollView Padding="15" Grid.Row="1">
 
@@ -82,7 +65,7 @@
                                             </Grid.RowDefinitions>
 
                                             <Image
-                                            Source="{Binding ImageFullPath}"
+                                            Source="{Binding UrlImage}"
                                             VerticalOptions="Center"
                                             WidthRequest="100"
                                             HeightRequest="100"
@@ -94,7 +77,7 @@
                                             TextColor="#121212"
                                             FontAttributes="Bold"            
                                             VerticalOptions="Center"
-                                            Text="{Binding ProductName, StringFormat='{0:C2}'}"
+                                            Text="{Binding Name, StringFormat='{0:C2}'}"
                                             Grid.Row="0"
                                             Grid.Column="1"
                                             Grid.ColumnSpan="2"/>
@@ -102,14 +85,14 @@
                                             <Label
                                             TextColor="#121212"
                                             VerticalOptions="Center"
-                                            Text="{Binding ProductSize, StringFormat='{0:C2}'}"
+                                            Text="{Binding Description, StringFormat='{0:C2}'}"
                                             Grid.Row="1"
                                             Grid.Column="1"/>
 
                                             <Label
                                             TextColor="#121212"
                                             VerticalOptions="Center"
-                                            Text="{Binding ProductPrice, StringFormat='{0:C2}'}"
+                                            Text="{Binding Price, StringFormat='{0:C2}'}"
                                             Grid.Row="2"
                                             Grid.Column="1"/>
                                         </Grid>

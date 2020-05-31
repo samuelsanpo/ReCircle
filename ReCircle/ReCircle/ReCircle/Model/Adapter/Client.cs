@@ -16,6 +16,7 @@ namespace ReCircle.Model.Adapter
         public string Gender { get; set; }
         public string Password { get; set; }
         public string VerificationCode { get; set; }
+        public int seeds { get; set; }
         public bool IsActive { get; set; }
     }
 }

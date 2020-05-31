@@ -35,7 +35,8 @@ namespace ReCircle.Services
                     Email = item.Object.Email,
                     Document  = item.Object.Document,
                     Calification = item.Object.Gender,
-                    IsActive =  item.Object.IsActive
+                    IsActive =  item.Object.IsActive,
+                    seeds = item.Object.seeds
                 }).ToList();
         }
 
@@ -59,7 +60,8 @@ namespace ReCircle.Services
                     Document = document,
                     Calification = gender,
                     VerificationCode = verification,
-                    IsActive = false
+                    IsActive = false,
+                    seeds = 100
                 });
         }
 
@@ -83,7 +85,7 @@ namespace ReCircle.Services
 
         public async Task UpdateClient(string userId, string name, int role, string lastname
             , string mobile, string address, DateTime birth, string email, string document, string gender
-            , string verification, bool isActive)
+            , string verification, bool isActive, int seeds)
         {
             var toUpdatePerson = (await firebase
                 .Child(ChildName)
@@ -105,7 +107,8 @@ namespace ReCircle.Services
                     Document = document,
                     Calification = gender,
                     VerificationCode = verification,
-                    IsActive = isActive
+                    IsActive = isActive,
+                    seeds = seeds
                 });
         }
 

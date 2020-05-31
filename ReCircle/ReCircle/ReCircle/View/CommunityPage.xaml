@@ -4,7 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ReCircle.View.CommunityPage">
+             x:Class="ReCircle.View.CommunityPage"
+             NavigationPage.HasNavigationBar="False"
+             Shell.BackgroundColor="#5FDD9E">
     <ContentPage.Content>
         <StackLayout Padding="10">
             <Image Source="LogoPrincipal"/>

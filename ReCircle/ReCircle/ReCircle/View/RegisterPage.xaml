@@ -5,11 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ReCircle.View.RegisterPage"
+             NavigationPage.HasNavigationBar="False"
              xmlns:Services="clr-namespace:ReCircle.Services"
-             BackgroundImageSource="Background">
+             BackgroundImageSource="Background"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
 
 
-    <StackLayout Padding="30" BindingContext="{Binding verification}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+    <StackLayout Padding="30" BindingContext="{Binding register}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
 
 
 
@@ -21,6 +23,7 @@
         <Frame Opacity="0.7">
         <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <StackLayout Padding="0" Margin="0">
+
                 
                     <Entry x:Name="Nombre" Text="{Binding Name}" ClearButtonVisibility="WhileEditing" Placeholder="Nombre(s)" PlaceholderColor="Gray" HorizontalTextAlignment="Center" ></Entry>
                 
@@ -35,13 +38,12 @@
                     <Entry x:Name="ConfirmeContraseña" Text="{Binding PasswordRepeat}" ClearButtonVisibility="WhileEditing" Placeholder="Confirma tu Contraseña" IsPassword="True" PlaceholderColor="Gray" HorizontalTextAlignment="Center" ></Entry>
                     
                     <Picker Title="Seleccione Género" SelectedItem="{Binding Gender}" TitleColor="Gray" HorizontalOptions="FillAndExpand">
+
                         <Picker.Items>
                             <x:String>Masculino</x:String>
                             <x:String>Femenino</x:String>
                         </Picker.Items>
                     </Picker>
-                
-
                 <Grid>
 
                     <Grid HorizontalOptions="Center">
@@ -50,7 +52,9 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Cumpleaños" Grid.Column="0" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="End"/>
-                        <DatePicker x:Name="FechaNacimientoR" Grid.Column="1" MinimumDate="01/01/1950" MaximumDate="12/31/2018" Date="01/01/2000" TextColor="#57AA33" HorizontalOptions="Start"/>
+
+                        <DatePicker x:Name="FechaNacimientoR" Grid.Column="1" MinimumDate="01/01/1950" MaximumDate="12/31/2018" Date="01/01/2000" HorizontalOptions="Start"/>
+
                     </Grid>
 
                 </Grid>
@@ -61,7 +65,9 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <CheckBox x:Name="Terminos" IsChecked="{Binding Terminos}" VerticalOptions="Center" Color="Green" Grid.Column="0" HorizontalOptions="End"/>
+
                     <Label Text="Aceptar terminos y condiciones" Padding="0" VerticalOptions="Center" Grid.Column="1" HorizontalOptions="Start" TextDecorations="Underline" FontAttributes="Bold"/>
+
                 </Grid>
                 <Grid>
 
@@ -75,7 +81,7 @@
                                          x:Name="BotonContinuar"
                                          StartColor="White"
                                          EndColor="White"
-                                         TextColor="#5FDD9E"
+                                         TextColor="#57AA33"
                                          HorizontalOptions="CenterAndExpand"
                                          BackgroundColor="Transparent"
                                          VerticalOptions="End"

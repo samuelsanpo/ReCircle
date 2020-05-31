@@ -61,6 +61,12 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.Firebase.Core">
+      <Version>71.1601.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Auth">
+      <Version>71.1605.1</Version>
+    </PackageReference>
     <PackageReference Include="MvvmLightLibs">
       <Version>5.4.1.1</Version>
     </PackageReference>
@@ -73,6 +79,10 @@
     <Compile Include="Renderers\StandardEntryRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Login.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <GoogleServicesJson Include="Assets\google-services.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -322,5 +332,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\StoreIcon.png" />
   </ItemGroup>
+  <Target Name="RemoveGoogleServicesJsonStampFiles" BeforeTargets="BeforeBuild">
+    <Delete Files="$(IntermediateOutputPath)\ProcessGoogleServicesJson.stamp" />
+  </Target>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

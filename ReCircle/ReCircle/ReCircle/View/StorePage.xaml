@@ -39,6 +39,7 @@
                 ItemsSource="{Binding ProductsType}"
                 HasUnevenRows="True"      
                 IsPullToRefreshEnabled="True"
+                ItemTapped="MyListView_ItemTapped"
                 RefreshCommand="{Binding RefreshCommand}"
                 IsRefreshing="{Binding IsRefreshing}"
                 AbsoluteLayout.LayoutFlags="All"
@@ -110,6 +111,7 @@
                                                  HorizontalOptions="CenterAndExpand"
                                                  Margin="5"
                                                  Padding="10"
+                                                 Command="{Binding ComprarCommand}"
                                                 />
                                         </Grid>
                                     </StackLayout>

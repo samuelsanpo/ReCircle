@@ -5,6 +5,8 @@ using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System.Net.Http;
 using Acr.UserDialogs;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace ReCircle.View
 {
@@ -17,51 +19,93 @@ namespace ReCircle.View
         {
             InitializeComponent();
         }
+        public const string ServiceApiUrl = "https://recircle.cognitiveservices.azure.com/";
+        public const string ApiKey = "fbf24fb85def416abc476fdb4ba50e70";
 
-
+       
 
         private async void Button_Choose(object sender, EventArgs e)
         {
+            await Plugin.Media.CrossMedia.Current.Initialize();
 
-            await CrossMedia.Current.Initialize();
-
-            var foto = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions());
-            _foto = foto;
-            ImgSource.Source = FileImageSource.FromFile(foto.Path);
-
+            _foto = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions());
+            Img.Source = FileImageSource.FromFile(_foto.Path);
         }
+
         private async void Button_Take(object sender, EventArgs e)
         {
-            await CrossMedia.Current.Initialize();
 
-            var foto = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions()
+             await Plugin.Media.CrossMedia.Current.Initialize();
+
+            _foto = await Plugin.Media.CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions()
             {
-                Directory = "clasificator",
-                Name= "source.jpg"
+                Directory = "Vision",
+                Name = "Target.jpg"
             });
-            _foto = foto;
-            ImgSource.Source = FileImageSource.FromFile(foto.Path);
+            Img.Source = FileImageSource.FromFile(_foto.Path);
+
+        
+
         }
+
+
+
 
         private async void Button_Analyze(object sender, EventArgs e)
         {
-            const string endpoint = "https://recircle.cognitiveservices.azure.com/";
-            var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("Prediction-key", "fbf24fb85def416abc476fdb4ba50e70");
+            using (Acr.UserDialogs.UserDialogs.Instance.Loading("Clasificando..."))
+            {
+                if (_foto == null) return;
 
-            var ContentStream = new StreamContent(_foto.GetStream());
+                var stream = _foto.GetStream();
 
-            var response = await httpClient.PostAsync(endpoint, ContentStream);
+                var httpClient = new HttpClient();
+                var url = ServiceApiUrl;
+                httpClient.DefaultRequestHeaders.Add("Prediction-Key", ApiKey);
 
-            if (!response.IsSuccessStatusCode) {
-                UserDialogs.Instance.Toast("Error");
-                return;
+                var content = new StreamContent(stream);
+
+                var response = await httpClient.PostAsync(url, content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    Acr.UserDialogs.UserDialogs.Instance.Toast("Hubo un error en la deteccion...");
+                    return;
+                }
+
+                var json = await response.Content.ReadAsStringAsync();
+
+                var c = JsonConvert.DeserializeObject<ClasificationResponse>(json);
+
+                var p = c.Predictions.FirstOrDefault();
+                if (p == null)
+                {
+                    Acr.UserDialogs.UserDialogs.Instance.Toast("Image no reconocida.");
+                    return;
+                }
+                Resultado.Text = $"{p.Tag} - {p.Probability:p0}";
+                Precision.Progress = p.Probability;
             }
 
-            var json = await response.Content.ReadAsStringAsync();
-
-
-
+        Acr.UserDialogs.UserDialogs.Instance.Toast("Clasificacion terminada...");
         }
+}
+
+
+    public class ClasificationResponse
+    {
+        public string Id { get; set; }
+        public string Project { get; set; }
+        public string Iteration { get; set; }
+        public DateTime Created { get; set; }
+        public Prediction[] Predictions { get; set; }
     }
+
+    public class Prediction
+    {
+        public string TagId { get; set; }
+        public string Tag { get; set; }
+        public float Probability { get; set; }
+    }
+
 }

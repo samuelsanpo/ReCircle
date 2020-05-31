@@ -1,11 +1,8 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Xamarin.Essentials;
+using Plugin.Permissions;
 
 namespace ReCircle.Droid
 {
@@ -19,18 +16,17 @@ namespace ReCircle.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
             Acr.UserDialogs.UserDialogs.Init(this);
-            Platform.Init(this, savedInstanceState);
+            
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
 
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
-            Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

@@ -29,3 +29,5 @@ using Xamarin.Essentials;
 // Add some common permissions, these can be removed if not needed
 [assembly: UsesPermission(Android.Manifest.Permission.Internet)]
 [assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
+[assembly: UsesPermission(Android.Manifest.Permission.Camera)]
+[assembly: UsesPermission(Android.Manifest.Permission.ReadExternalStorage)]

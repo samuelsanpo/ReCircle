@@ -8,49 +8,13 @@
              x:Class="ReCircle.View.ArbolPage"
              Shell.BackgroundColor="#5FDD9E">
     <ContentPage.Content>
-    
-    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <StackLayout>
-            <Grid>
-                <Image
-                    HorizontalOptions="Center"
-                    Source="LogoPrincipal"
-                    WidthRequest="200" />
-            </Grid>
-            <yummy:PancakeView
-                Margin="0,0,0,0"
-                Padding="30,0,30,30"
-                BackgroundGradientStartColor="White"
-                BackgroundGradientEndColor="#5FDD9E"    
-                CornerRadius="40,40,0,0"
-                VerticalOptions="FillAndExpand">
-                <StackLayout>
-                    <Label
-                        Margin="20"
-                        FontAttributes="Bold"
-                        FontSize="20"
-                        HorizontalOptions="CenterAndExpand"
-                        HorizontalTextAlignment="Center"
-                        Text="Comunicate con los recicladores"
-                        TextColor="Black"
-                        VerticalOptions="Center" />
-                    <Grid Margin="5" ColumnSpacing="20" RowSpacing="30">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <ImageButton x:Name="Cupon"  Grid.Row="0" Source="ArbolA" BackgroundColor="White"></ImageButton>
-                        <ImageButton x:Name="Otros" Grid.Row="1" Source="ArbolB" Grid.Column="1" BackgroundColor="White"></ImageButton>
-                       
-                    </Grid>
-                </StackLayout>
 
-            </yummy:PancakeView>
-        </StackLayout>
-    </ScrollView>
-
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <StackLayout>
+                <Image Source="LogoPrincipal" HorizontalOptions="FillAndExpand"/>
+                <ImageButton x:Name="Cupon"  Grid.Row="0" Source="ArbolA" BackgroundColor="Transparent"></ImageButton>
+                <ImageButton x:Name="Otros" Grid.Row="1" Source="ArbolB" BackgroundColor="Transparent" CornerRadius="10"></ImageButton>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

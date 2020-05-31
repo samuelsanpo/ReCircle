@@ -31,6 +31,9 @@ namespace ReCircle.Services
                 case "Arbol":
                     await App.Current.MainPage.Navigation.PushAsync(new ArbolPage());
                     break;
+                case "Points":
+                    await App.Current.MainPage.Navigation.PushAsync(new PointsPage());
+                    break;
                 default:
                     break;
             }

@@ -41,6 +41,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="230" />
                             <RowDefinition Height="230" />
+                            <RowDefinition Height="230" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -50,18 +51,25 @@
                             Grid.Row="0"
                             Grid.Column="0"
                             Grid.ColumnSpan="2">
-                            <ImageButton Command="{Binding ReciclarCommand}" Source="RecicleButton"/>
+                            <ImageButton Command="{Binding ReciclarCommand}" Source="RecicleButton" BackgroundColor="Transparent"/>
                         </yummy:PancakeView>
                        
                         <yummy:PancakeView
                             Grid.Row="1"
                             Grid.Column="0">
-                            <ImageButton Command="{Binding SemillaCommand}" Source="RedimeButton"/>
+                            <ImageButton Command="{Binding ContactoCommand}" Source="RedimeButton" BackgroundColor="Transparent"/> 
                         </yummy:PancakeView>
                         <yummy:PancakeView
                             Grid.Row="1"
                             Grid.Column="1">
-                            <ImageButton Command="{Binding ContactoCommand}" Source="ComunicaButton"/>
+                            <ImageButton Command="{Binding SemillaCommand}" Source="ComunicaButton" BackgroundColor="Transparent"/>
+                        </yummy:PancakeView>
+                        <yummy:PancakeView
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            HorizontalOptions="Center">
+                            <ImageButton Command="{Binding PointsCommand}" Source="SemillaNon" BackgroundColor="Transparent"/>
                         </yummy:PancakeView>
                     </Grid>
                     </StackLayout>

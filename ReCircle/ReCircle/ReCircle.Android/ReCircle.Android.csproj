@@ -82,13 +82,13 @@
     <Compile Include="Login.cs" />
   </ItemGroup>
   <ItemGroup>
+    <GoogleServicesJson Include="Assets\google-services.json" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
-  <ItemGroup>
-  <GoogleServicesJson Include="Assets\google-services.json" />
-</ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
     <AndroidResource Include="Resources\layout\Toolbar.xml" />
@@ -109,14 +109,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\google-services.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReCircle\ReCircle.csproj">
-      <Project>{5A89C859-9AD0-4E31-8428-769EFC1B6B99}</Project>
+      <Project>{D812665F-1106-4BF7-A988-1C7505E0CD05}</Project>
       <Name>ReCircle</Name>
     </ProjectReference>
   </ItemGroup>
@@ -228,5 +224,26 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\showicon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Backgroundmenor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-ldpi\Backgroundmenor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\Backgroundmenor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\Backgroundmenor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\Backgroundmenor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Backgroundmenor.png" />
+  </ItemGroup>
+  <Target Name="RemoveGoogleServicesJsonStampFiles" BeforeTargets="BeforeBuild">
+    <Delete Files="$(IntermediateOutputPath)\ProcessGoogleServicesJson.stamp" />
+  </Target>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

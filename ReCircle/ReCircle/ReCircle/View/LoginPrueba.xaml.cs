@@ -14,8 +14,9 @@ namespace ReCircle.View
 
         public LoginPrueba()
         {
-            auth = DependencyService.Get<IAuth>();
+            
             InitializeComponent();
+            auth = DependencyService.Get<IAuth>();
         }
 
         async private void LoginClicked()
@@ -30,9 +31,15 @@ namespace ReCircle.View
 
         async void Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            
-            await DisplayAlert("error", "E-mail or password are incorrect. Try again!", "OK");
-            //
+            string Token = await auth.LoginWithEmailPassword(EmailInput.Text, PasswordInput.Text);
+            if (Token != "")
+            {
+                await DisplayAlert("Good", "E-mail or password are incorrect. Try again!", "OK");
+            }
+            else
+            {
+                ShowError();
+            }
         }
 
         async void Register_Clicked(System.Object sender, System.EventArgs e)
@@ -49,5 +56,6 @@ namespace ReCircle.View
             }
             
         }
+
     }
 }

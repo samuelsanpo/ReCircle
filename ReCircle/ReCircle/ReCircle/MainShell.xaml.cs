@@ -3,23 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace ReCircle
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class MainShell : Shell
     {
-        public MainPage()
+        public MainShell()
         {
             InitializeComponent();
-        }
-
-        void TapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
-        {
-
         }
     }
 }

@@ -17,6 +17,7 @@ namespace ReCircle
         {
             InitializeComponent();
 
+
             MainPage = new NavigationPage(new LoginPrueba());
 
         }

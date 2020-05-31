@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:Services="clr-namespace:ReCircle.Services"
+             x:Class="ReCircle.View.CompleteSeeds">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="LogoPrincipal" HorizontalOptions="Center"/>
+            <Label Text="Por favor culmina el registro de tu reciclaje" TextColor="Green" FontAttributes="Bold" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+            <Services:StandardEntry
+                        x:Name="Peso"
+                        ClearButtonVisibility="WhileEditing"
+                        Grid.Row="0"
+                        Margin="0,0,0,10"
+                        Padding="10"
+                        BackgroundColor="#31FFFFFF"
+                        BorderColor="Green"
+                        BorderThickness="1"
+                        FontSize="Medium" 
+                        CornerRadius="8"
+                        Placeholder="Peso apróximado (Kg)"
+                        PlaceholderColor="LightSlateGray" 
+                            />
+            <Label Text="Este reciclaje te dará:" TextColor="Green" FontAttributes="Bold" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+            <Image Source="EjmSeeds" HorizontalOptions="Center"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Services:GradientButton Text="CANCELAR"
+                                         Grid.Column="0"
+                                             x:Name="BotonSiguiente"
+                                             StartColor="#5FDD9E"
+                                             EndColor="#57AA33"
+                                             TextColor="White"
+                                             HorizontalOptions="CenterAndExpand"
+                                             Margin="5"
+                                             Padding="10"
+                                             Command="{Binding LoginCommand}"
+                                             IsEnabled="{Binding IsEnabled}"/>
+
+                <Services:GradientButton Text="CANCELAR"
+                                         Grid.Column="1"
+                                             x:Name="BotonSiguiente"
+                                             StartColor="#5FDD9E"
+                                             EndColor="#57AA33"
+                                             TextColor="White"
+                                             HorizontalOptions="CenterAndExpand"
+                                             Margin="5"
+                                             Padding="10"
+                                             Command="{Binding LoginCommand}"
+                                             IsEnabled="{Binding IsEnabled}"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

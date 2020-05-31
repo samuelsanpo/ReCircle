@@ -18,7 +18,7 @@
                     HorizontalOptions="Center"
                     Source="LogoPrincipal"
                     WidthRequest="200" />
-                <Button Text="HolaMundo" Command="{Binding MapsCommand}" BackgroundColor="Blue"/>
+                <Button BindingContext="{Binding maps}" Text="HolaMundo" Command="{Binding MapsCommand}" BackgroundColor="Blue"/>
                 </Grid>
                 <yummy:PancakeView
                 Margin="0,30,0,0"

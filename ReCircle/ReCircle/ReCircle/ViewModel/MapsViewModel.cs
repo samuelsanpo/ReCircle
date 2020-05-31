@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
 using ReCircle.Services;
 using Xamarin.Essentials;
 
@@ -102,6 +104,8 @@ namespace ReCircle.ViewModel
         #region Constructor
         public MapsViewModel()
         {
+            dialogService = new DialogService();
+            navigationService = new NavigationService();
         }
         #endregion
 
@@ -118,8 +122,8 @@ namespace ReCircle.ViewModel
                 if (location != null)
                 {
                     //FirstCamera = "4.00542,-7.748585, 15";
-                    Latitude = location.Latitude;
-                    Longitude = location.Longitude;
+                    Latitude = 4.00542;
+                    Longitude = -7.748585;
                     await dialogService.ShowMessage(Latitude.ToString(), Longitude.ToString());
 
                 }
@@ -149,6 +153,15 @@ namespace ReCircle.ViewModel
         #endregion
 
         #region Commands
+        public ICommand MapsCommand { get { return new RelayCommand(Maps); } }
+
+        public async void Maps()
+        {
+            await navigationService.Navigate("Maps");
+            GeolocationMethod();
+            
+        }
+
         #endregion
 
         #region Singleton

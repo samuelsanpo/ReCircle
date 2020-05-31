@@ -18,11 +18,11 @@ namespace ReCircle.Services
                     await App.Current.MainPage.Navigation.PushAsync(new RegisterPage());
                     break;
                 case "Principal":
+                    var mainViewModel2 = MainViewModel.GetInstance();
+                    mainViewModel2.maps = new MapsViewModel();
                     Application.Current.MainPage = new MainShell();
                     break;
                 case "Maps":
-                    var mainViewModel2 = MainViewModel.GetInstance();
-                    mainViewModel2.maps = new MapsViewModel();
                     await App.Current.MainPage.Navigation.PushAsync(new Maps());
                     break;
                 default:

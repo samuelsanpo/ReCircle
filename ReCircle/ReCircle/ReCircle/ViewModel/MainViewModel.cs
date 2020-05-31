@@ -47,13 +47,7 @@ namespace ReCircle.ViewModel
         #endregion
 
         #region Commands
-        public ICommand MapsCommand { get { return new RelayCommand(Maps); } }
-
-        public async void Maps()
-        {
-            await navigationService.Navigate("Maps");
-            await dialogService.ShowMessage("Hola", "");
-        }
+        
         #endregion
 
         #region Events

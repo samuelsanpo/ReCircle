@@ -13,8 +13,13 @@
 
             <Label Text="Bienvenido a la sección de noticias y eventos" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Green"/>
 
-            <Label Text="NOTICIAS" FontAttributes="Bold"/>
-
+            <Frame BackgroundColor="White" CornerRadius="15" Opacity="0.7" Margin="6">
+                <StackLayout>
+                <Label Text="EVENTOS" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <Image Source="News" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </Frame>
+            
             <Frame BackgroundColor="White" CornerRadius="15" Opacity="0.7" Margin="6">
                 <StackLayout>
 
@@ -29,9 +34,20 @@
                     <Image Source="EventIcon" HorizontalOptions="Start" Grid.Column="0"/>
                     <Label Text="Marcha por cambio climático" Grid.Column="1" VerticalOptions="Center"/>
                         <Label Text="11/12/20" Grid.Column="2" VerticalOptions="Center"/>
-                </Grid>
+                    </Grid>
+                    <Grid VerticalOptions="Center" Padding="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                <Grid>
+                        <Image Source="EventIcon" HorizontalOptions="Start" Grid.Column="0"/>
+                        <Label Text="Cumbre del Clima Virtual" Grid.Column="1" VerticalOptions="Center"/>
+                        <Label Text="16/10/20" Grid.Column="2" VerticalOptions="Center"/>
+                    </Grid>
+
+                    <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
@@ -39,6 +55,7 @@
 
                     <Image Source="AddIcon" HorizontalOptions="Start"/>
                         <Label Text="Agregar Evento" Grid.Column="1" VerticalOptions="Center"/>
+
                 </Grid>
                 </StackLayout>
             </Frame>

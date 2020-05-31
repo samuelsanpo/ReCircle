@@ -9,9 +9,27 @@
              Shell.BackgroundColor="#5FDD9E">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="LogoPrincipal" HorizontalOptions="Center"/>
+            <SearchBar
+               Placeholder="Buscar"
+               BackgroundColor="White"
+               PlaceholderColor="Gray"
+               CancelButtonColor="White"
+             />
+            <ScrollView>
+                <StackLayout>
+            <Image Source="ImgA" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgB" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgC" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgA" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgB" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgC" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgA" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgB" HorizontalOptions="FillAndExpand"/>
+            <Image Source="ImgC" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </ScrollView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

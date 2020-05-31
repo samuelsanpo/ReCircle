@@ -41,7 +41,7 @@
                         </Grid.ColumnDefinitions>
                         <ImageButton x:Name="Cupon"  Grid.Row="0" Source="RecicladorA" BackgroundColor="White"></ImageButton>
                         <ImageButton x:Name="Otros" Grid.Row="1" Source="RecicladorB" Grid.Column="1" BackgroundColor="White"></ImageButton>
-                        <ImageButton x:Name="Otros" Grid.Row="2" Source="RecicladorC" Grid.Column="1" BackgroundColor="White"></ImageButton>
+                        <ImageButton x:Name="OtrosReciclador" Grid.Row="2" Source="RecicladorC" Grid.Column="1" BackgroundColor="White"></ImageButton>
                     </Grid>
                 </StackLayout>
 

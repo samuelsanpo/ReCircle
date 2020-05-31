@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              xmlns:renderers="clr-namespace:ReCircle.Renderers"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             Padding="0,40,0,0"
+             Padding="0,0,0,0"
              NavigationPage.HasNavigationBar="False"
              x:Class="ReCircle.View.ReciclePage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
@@ -18,10 +18,9 @@
                     HorizontalOptions="Center"
                     Source="LogoPrincipal"
                     WidthRequest="200" />
-                <Button BindingContext="{Binding maps}" Text="HolaMundo" Command="{Binding MapsCommand}" BackgroundColor="Blue"/>
-                </Grid>
+            </Grid>
                 <yummy:PancakeView
-                Margin="0,30,0,0"
+                Margin="0,0,0,0"
                 Padding="30,0,30,30"
                 BackgroundGradientStartColor="White"
                 BackgroundGradientEndColor="#5FDD9E"    
@@ -49,82 +48,19 @@
                         <yummy:PancakeView
                             Grid.Row="0"
                             Grid.Column="0"
-                            Padding="10"
-                            BackgroundColor="White"
-                            BorderThickness="1"
-                            CornerRadius="15"
-                            Elevation="3">
-                            <StackLayout>
-                                <Image Source="im2" />
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontSize="20"
-                                    HorizontalOptions="CenterAndExpand"
-                                    HorizontalTextAlignment="Center"
-                                    Text="Enviar foto de reciclaje"
-                                    TextColor="Black"
-                                    VerticalOptions="CenterAndExpand" />
-                            </StackLayout>
+                            Grid.ColumnSpan="2">
+                            <Image Source="RecicleButton"/>
                         </yummy:PancakeView>
+                       
                         <yummy:PancakeView
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Padding="10"
-                            BackgroundColor="White"
-                            BorderThickness="1"
-                            CornerRadius="15"
-                            Elevation="3">
-                            <StackLayout>
-                                <Image Source="im4" />
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontSize="20"
-                                    HorizontalOptions="CenterAndExpand"
-                                    HorizontalTextAlignment="Center"
-                                    Text="Redimir los puntos"
-                                    TextColor="Black"
-                                    VerticalOptions="CenterAndExpand" />
-                            </StackLayout>
+                            Grid.Row="1"
+                            Grid.Column="0">
+                            <Image Source="RedimeButton"/>
                         </yummy:PancakeView>
                         <yummy:PancakeView
                             Grid.Row="1"
-                            Grid.Column="0"
-                            Padding="10"
-                            BackgroundColor="White"
-                            BorderThickness="1"
-                            CornerRadius="15"
-                            Elevation="3">
-                            <StackLayout>
-                                <Image Source="im3" />
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontSize="20"
-                                    HorizontalOptions="CenterAndExpand"
-                                    HorizontalTextAlignment="Center"
-                                    Text="Comunicate con los recicladores"
-                                    TextColor="Black"
-                                    VerticalOptions="CenterAndExpand" />
-                            </StackLayout>
-                        </yummy:PancakeView>
-                        <yummy:PancakeView
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            Padding="10"
-                            BackgroundColor="White"
-                            BorderThickness="1"
-                            CornerRadius="15"
-                            Elevation="3">
-                            <StackLayout>
-                                <Image Source="im1" />
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontSize="20"
-                                    HorizontalOptions="CenterAndExpand"
-                                    HorizontalTextAlignment="Center"
-                                    Text="Busca medios de trueque"
-                                    TextColor="Black"
-                                    VerticalOptions="CenterAndExpand" />
-                            </StackLayout>
+                            Grid.Column="1">
+                            <Image Source="ComunicaButton"/>
                         </yummy:PancakeView>
                     </Grid>
                     </StackLayout>

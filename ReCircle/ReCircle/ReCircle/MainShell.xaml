@@ -46,7 +46,7 @@
         <Tab Title="Recicla" Icon="RecicleIcon.png">
             <ShellContent ContentTemplate="{DataTemplate View:ReciclePage}"/>
         </Tab>
-        <Tab  Title="Comunidad" Icon="ComunityIcon.png">
+        <Tab  Title="Comunidad" Icon="ComunityButton.png">
             <ShellContent
                 Title="Noticias"
                 ContentTemplate="{DataTemplate View:CommunityPage}" />

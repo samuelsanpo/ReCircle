@@ -12,37 +12,11 @@
             <Label Text="Bienvenido a la sección de noticias y eventos"/>
 
             <Label Text="NOTICIAS" FontAttributes="Bold"/>
-            <CarouselView 
-                Grid.Row="2"
-                CurrentItem="{Binding CurrentPost, Mode=TwoWay}"
-                ItemsSource="{Binding Posts}"
-                ItemTemplate="{StaticResource PostItemTemplate}"
-                VerticalOptions="End">
-                <CarouselView.Margin>
-                    <OnPlatform x:TypeArguments="Thickness">
-                        <On Platform="iOS" Value="12, 48, 0, 0" />
-                        <On Platform="Android" Value="12, 24, 0, 0" />
-                    </OnPlatform>
-                </CarouselView.Margin>
-                <CarouselView.PeekAreaInsets>
-                    <OnPlatform x:TypeArguments="Thickness">
-                        <On Platform="iOS" Value="0, 0, 200, 0" />
-                        <On Platform="Android" Value="0, 0, 600, 0" />
-                    </OnPlatform>
-                </CarouselView.PeekAreaInsets>
-                <CarouselView.ItemsLayout>
-                    <ListItemsLayout
-                        Orientation="Horizontal"
-                        SnapPointsType="Mandatory"
-                        SnapPointsAlignment="Start"
-                        ItemSpacing="12"/>
-                </CarouselView.ItemsLayout>
-            </CarouselView>
-
+           
 
             <Label Text="EVENTOS" FontAttributes="Bold"/>
 
-            <Frame BackgroundColor="White" CornerRadius="15" Opacity="0.7">
+            <Frame BackgroundColor="White" CornerRadius="15" Opacity="0.7" Margin="15">
                 <StackLayout>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -56,6 +30,7 @@
                     <Label Text="11/12/20" Grid.Column="2"/>
                 </Grid>
 
+                    <Image Source="EventIcon" HorizontalOptions="Start"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>

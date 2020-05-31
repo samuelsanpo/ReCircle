@@ -46,7 +46,6 @@
                 <ListView x:Name="MyListView"
                 ItemsSource="{Binding ProductsType}"
                 HasUnevenRows="True"      
-                ItemTapped="MyListView_ItemTapped"
                 IsPullToRefreshEnabled="True"
                 RefreshCommand="{Binding RefreshCommand}"
                 IsRefreshing="{Binding IsRefreshing}"

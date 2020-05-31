@@ -232,6 +232,7 @@ namespace ReCircle.ViewModel
             dialogService = new DialogService();
             auth = DependencyService.Get<IAuth>();
             encryptService = new EncryptService();
+            instance = this;
         }
         #endregion
 

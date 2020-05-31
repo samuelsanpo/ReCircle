@@ -8,7 +8,8 @@
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              Padding="0,40,0,0"
              NavigationPage.HasNavigationBar="False"
-             x:Class="ReCircle.View.ReciclePage">
+             x:Class="ReCircle.View.ReciclePage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
     
      <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
          <StackLayout>
@@ -17,6 +18,7 @@
                     HorizontalOptions="Center"
                     Source="LogoPrincipal"
                     WidthRequest="200" />
+                <Button Text="HolaMundo" Command="{Binding MapsCommand}" BackgroundColor="Blue"/>
                 </Grid>
                 <yummy:PancakeView
                 Margin="0,30,0,0"

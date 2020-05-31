@@ -16,6 +16,7 @@ namespace ReCircle.View
         public Maps()
         {
             InitializeComponent();
+
             var locationViewModel = MapsViewModel.GetInstance();
             double latitude = locationViewModel.Latitude;
             double longitude = locationViewModel.Longitude;
@@ -24,6 +25,7 @@ namespace ReCircle.View
             map.Pins.Add(ubicationPin);
             Position target = new Position(latitude, longitude);
             map.InitialCameraUpdate = CameraUpdateFactory.NewCameraPosition(new CameraPosition(target, 18));
+
         }
     }
 }

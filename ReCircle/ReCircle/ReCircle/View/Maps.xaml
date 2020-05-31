@@ -25,8 +25,7 @@
                     </Grid.RowDefinitions>
 
                     <maps:Map x:Name="map"
-                      VerticalOptions="FillAndExpand"
-                      InitialCameraUpdate="{Binding FirstCamera}">
+                      VerticalOptions="FillAndExpand">
                     </maps:Map>
                 </Grid>
             </StackLayout>
@@ -43,9 +42,9 @@
                                      Grid.Row="1">
 
 
-                <StackLayout>
-                    <Label Text="CONFIRMA TU DIRECCIÓN" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" IsVisible="false"/>
-                    <Label Text="Te encuentras aqui" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20"/>
+                <StackLayout BindingContext="{Binding maps}">
+                    <Label Text="CONFIRMA TU DIRECCIÓN" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" IsVisible="{Binding IsVisible}"/>
+                    <Label Text="Te encuentras aqui" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" IsVisible="{Binding IsVisibleTwo}"/>
 
                     <Services:GradientButton Text="Pedir Aqui"
                                          x:Name="UbicacionActualBoton"
@@ -54,7 +53,8 @@
                                          TextColor="White"
                                          HorizontalOptions="CenterAndExpand"
                                          Margin="5"
-                                         Command="{Binding MapsCommand}"/>
+                                         Command="{Binding AceptLocationCommand}"
+                                         IsVisible="{Binding IsVisibleTwo}"/>
 
 
                     <Services:StandardEntry
@@ -70,7 +70,7 @@
                             CornerRadius="8"
                             Placeholder="Nombre del Lugar"
                             PlaceholderColor="LightSlateGray"
-                            IsVisible="false"/>
+                            IsVisible="{Binding IsVisible}"/>
 
                     <Services:StandardEntry
                             x:Name="Direccion" 
@@ -86,7 +86,7 @@
                             CornerRadius="8"
                             Placeholder="Dirección"
                             PlaceholderColor="LightSlateGray"
-                            IsVisible="false"/>
+                            IsVisible="{Binding IsVisible}"/>
 
                     <Services:StandardEntry
                             x:Name="ExtraDir" 
@@ -101,7 +101,17 @@
                             CornerRadius="8"
                             Placeholder="Apartamento, casa, piso..."
                             PlaceholderColor="LightSlateGray"
-                            IsVisible="false"/>
+                            IsVisible="{Binding IsVisible}"/>
+
+                     <Services:GradientButton Text="Confirmar"
+                                         x:Name="ConfirmarUbicacionBoton"
+                                         StartColor="#000046"
+                                         EndColor="#1CB5E0"
+                                         TextColor="White"
+                                         HorizontalOptions="CenterAndExpand"
+                                         Margin="5"
+                                         Command="{Binding SaveCommand}"
+                                         IsVisible="{Binding IsVisible}"/>
 
                 </StackLayout>
             </panCake:PancakeView>
